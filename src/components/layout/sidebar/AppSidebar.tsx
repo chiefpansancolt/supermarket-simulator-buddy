@@ -57,11 +57,11 @@ export function AppSidebar() {
 										</SidebarItem>
 										<SidebarItem
 											as={Link}
-											href="/bank"
-											icon={HiCurrencyDollar}
-											active={pathname === "/bank"}
+											href="/market"
+											icon={HiShoppingCart}
+											active={pathname === "/market"}
 										>
-											Bank
+											Market
 										</SidebarItem>
 										<SidebarItem
 											as={Link}
@@ -73,11 +73,11 @@ export function AppSidebar() {
 										</SidebarItem>
 										<SidebarItem
 											as={Link}
-											href="/market"
-											icon={HiShoppingCart}
-											active={pathname === "/market"}
+											href="/bank"
+											icon={HiCurrencyDollar}
+											active={pathname === "/bank"}
 										>
-											Market
+											Bank
 										</SidebarItem>
 									</>
 								)}
