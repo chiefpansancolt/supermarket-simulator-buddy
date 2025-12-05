@@ -7,9 +7,10 @@ import type { Playthrough } from "@/types";
 interface LicensesTabProps {
 	activePlaythrough: Playthrough;
 	onUnlockLicense: (licenseId: string) => void;
+	onLockLicense: (licenseId: string) => void;
 }
 
-export function LicensesTab({ activePlaythrough, onUnlockLicense }: LicensesTabProps) {
+export function LicensesTab({ activePlaythrough, onUnlockLicense, onLockLicense }: LicensesTabProps) {
 	const currentStoreLevel = activePlaythrough.storeLevel ?? 0;
 	const unlockedLicenses = activePlaythrough.unlockedLicenses || [];
 

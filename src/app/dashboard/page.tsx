@@ -182,46 +182,56 @@ export default function Dashboard() {
 					</div>
 				</Card>
 
-				{/* Financial Overview */}
-				<Card className="mb-6">
-					<div className="mb-4 flex items-center gap-2">
-						<HiCurrencyDollar className="h-6 w-6 text-gray-900 dark:text-white" />
-						<h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-							Financial Overview
-						</h2>
-					</div>
-					<div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-						<div className="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
-							<p className="text-sm text-gray-600 dark:text-gray-400">
-								Active Loans
-							</p>
-							<p className="mt-1 text-2xl font-bold text-gray-900 dark:text-white">
-								{activeLoans.length}
+				<div className="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
+					{/* Financial Overview */}
+					<Card>
+						<div className="mb-4 flex items-center gap-2">
+							<HiCurrencyDollar className="h-6 w-6 text-gray-900 dark:text-white" />
+							<h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+								Financial Overview
+							</h2>
+						</div>
+						<div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+							<div className="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
+								<p className="text-sm text-gray-600 dark:text-gray-400">
+									Active Loans
+								</p>
+								<p className="mt-1 text-2xl font-bold text-gray-900 dark:text-white">
+									{activeLoans.length}
+								</p>
+							</div>
+							<div className="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
+								<p className="text-sm text-gray-600 dark:text-gray-400">
+									Daily Payments
+								</p>
+								<p className="mt-1 text-2xl font-bold text-orange-600 dark:text-orange-400">
+									${totalDailyPayment.toLocaleString()}
+								</p>
+							</div>
+						</div>
+						<div className="mt-4">
+							<Button as={Link} href="/bank" color="blue" size="sm">
+								View Bank Details
+							</Button>
+						</div>
+					</Card>
+					{/* Total Investment Summary */}
+					<Card className="flex justify-start">
+						<div>
+							<h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+								Total Investment
+							</h2>
+							<p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+								Combined spending across management and market
 							</p>
 						</div>
-						<div className="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
-							<p className="text-sm text-gray-600 dark:text-gray-400">
-								Total Debt
-							</p>
-							<p className="mt-1 text-2xl font-bold text-red-600 dark:text-red-400">
-								${totalLoanDebt.toLocaleString()}
+						<div>
+							<p className="text-4xl font-bold text-green-600 dark:text-green-400">
+								${totalInvestment.toLocaleString()}
 							</p>
 						</div>
-						<div className="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
-							<p className="text-sm text-gray-600 dark:text-gray-400">
-								Daily Payments
-							</p>
-							<p className="mt-1 text-2xl font-bold text-orange-600 dark:text-orange-400">
-								${totalDailyPayment.toLocaleString()}
-							</p>
-						</div>
-					</div>
-					<div className="mt-4">
-						<Button as={Link} href="/bank" color="blue" size="sm">
-							View Bank Details
-						</Button>
-					</div>
-				</Card>
+					</Card>
+				</div>
 
 				{/* Management & Market Stats */}
 				<div className="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -385,28 +395,6 @@ export default function Dashboard() {
 						</div>
 					</Card>
 				</div>
-
-				{/* Total Investment Summary */}
-				<Card>
-					<div className="flex items-center justify-between">
-						<div>
-							<h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-								Total Investment
-							</h2>
-							<p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-								Combined spending across management and market
-							</p>
-						</div>
-						<div className="text-right">
-							<p className="text-4xl font-bold text-green-600 dark:text-green-400">
-								${totalInvestment.toLocaleString()}
-							</p>
-							<p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
-								One-time purchases only (excludes daily wages and payments)
-							</p>
-						</div>
-					</div>
-				</Card>
 			</div>
 
 			<EditPlaythroughModal
