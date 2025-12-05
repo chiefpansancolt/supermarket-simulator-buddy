@@ -47,6 +47,8 @@ export function PlaythroughProvider({ children }: { children: React.ReactNode })
 			// Auto-unlock starter license and growth
 			unlockedLicenses: ["license_0"],
 			unlockedGrowth: ["1"],
+			// Auto-unlock starter tools
+			unlockedTools: ["Paper Bag", "Sponge", "Mop"],
 		};
 
 		setAppData((prev) => {

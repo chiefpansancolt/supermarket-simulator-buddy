@@ -9,6 +9,7 @@ import {
 	HiCurrencyDollar,
 	HiHome,
 	HiOfficeBuilding,
+	HiShoppingCart,
 } from "react-icons/hi";
 import { usePlaythrough } from "@/lib/contexts/PlaythroughContext";
 import { useUI } from "@/lib/contexts/UIContext";
@@ -69,6 +70,14 @@ export function AppSidebar() {
 											active={pathname === "/management"}
 										>
 											Management
+										</SidebarItem>
+										<SidebarItem
+											as={Link}
+											href="/market"
+											icon={HiShoppingCart}
+											active={pathname === "/market"}
+										>
+											Market
 										</SidebarItem>
 									</>
 								)}

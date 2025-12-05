@@ -16,6 +16,8 @@ export interface Playthrough {
   unlockedGrowth?: string[];
   unlockedStorage?: string[];
   hiredEmployees?: string[];
+  unlockedTools?: string[];
+  unlockedVehicles?: string[];
   // Future: Add progress tracking fields here
 }
 
