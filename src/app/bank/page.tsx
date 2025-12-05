@@ -93,6 +93,8 @@ export default function BankPage() {
 							calculateLoanDetails(loan, termLength);
 						const active = isLoanActive(index);
 						const activeLoan = activeLoans.find((al) => al.loanIndex === index);
+						const currentStoreLevel = activePlaythrough.storeLevel ?? 0;
+						const meetsLevelRequirement = currentStoreLevel >= loan.storeLevel;
 
 						return (
 							<Card key={index} className="relative">
@@ -194,13 +196,22 @@ export default function BankPage() {
 										</Button>
 									</div>
 								) : (
-									<Button
-										color="blue"
-										onClick={() => handleActivateLoan(index)}
-										className="w-full"
-									>
-										Activate Loan
-									</Button>
+									<div className="space-y-2">
+										{!meetsLevelRequirement && (
+											<p className="text-sm text-red-600 dark:text-red-400">
+												Store level {loan.storeLevel} required (currently{" "}
+												{currentStoreLevel})
+											</p>
+										)}
+										<Button
+											color="blue"
+											onClick={() => handleActivateLoan(index)}
+											disabled={!meetsLevelRequirement}
+											className="w-full"
+										>
+											Activate Loan
+										</Button>
+									</div>
 								)}
 							</Card>
 						);

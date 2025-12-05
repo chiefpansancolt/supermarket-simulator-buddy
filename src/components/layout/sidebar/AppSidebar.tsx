@@ -7,6 +7,7 @@ import { HiChartPie, HiCog, HiCurrencyDollar, HiHome } from "react-icons/hi";
 import { usePlaythrough } from "@/lib/contexts/PlaythroughContext";
 import { useUI } from "@/lib/contexts/UIContext";
 import { PlaythroughSwitcher } from "./PlaythroughSwitcher";
+import { StoreLevel } from "./StoreLevel";
 
 export function AppSidebar() {
 	const pathname = usePathname();
@@ -23,7 +24,9 @@ export function AppSidebar() {
 				<div className="flex h-full flex-col">
 					<PlaythroughSwitcher />
 
-					<div className="flex-1 overflow-y-auto">
+					<StoreLevel />
+
+					<div className="flex-1 overflow-y-auto mt-2">
 						<SidebarItems>
 							<SidebarItemGroup>
 								<SidebarItem

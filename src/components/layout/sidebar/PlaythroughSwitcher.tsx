@@ -26,7 +26,7 @@ export function PlaythroughSwitcher() {
 
 	return (
 		<>
-			<div className="p-2">
+			<div className="mb-2">
 				<Dropdown
 					dismissOnClick={true}
 					renderTrigger={() => (

@@ -10,6 +10,7 @@ export interface Playthrough {
   createdAt: string;
   lastModified: string;
   description?: string;
+  storeLevel?: number;
   activeLoans?: ActiveLoan[];
   // Future: Add progress tracking fields here
 }
