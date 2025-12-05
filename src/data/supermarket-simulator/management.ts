@@ -1,0 +1,638 @@
+import type {
+  Cashier,
+  CustomerHelper,
+  Customization,
+  Growth,
+  Hiring,
+  Janitor,
+  License,
+  Management,
+  Restocker,
+  SecurityGuard,
+  Storage,
+} from "@/types";
+
+const licenses: License[] = [
+  {
+    id: "license_0",
+    storeLevel: 0,
+    price: 0,
+  },
+  {
+    id: "license_1",
+    storeLevel: 3,
+    price: 200,
+  },
+  {
+    id: "license_2",
+    storeLevel: 6,
+    price: 400,
+  },
+  {
+    id: "license_3",
+    storeLevel: 9,
+    price: 550,
+  },
+  {
+    id: "license_4",
+    storeLevel: 9,
+    price: 550,
+  },
+  {
+    id: "license_5",
+    storeLevel: 12,
+    price: 750,
+  },
+  {
+    id: "license_6",
+    storeLevel: 12,
+    price: 750,
+  },
+  {
+    id: "license_7",
+    storeLevel: 12,
+    price: 750,
+  },
+  {
+    id: "license_8",
+    storeLevel: 13,
+    price: 1100,
+  },
+  {
+    id: "license_9",
+    storeLevel: 16,
+    price: 1950,
+  },
+  {
+    id: "license_10",
+    storeLevel: 16,
+    price: 1950,
+  },
+  {
+    id: "license_11",
+    storeLevel: 20,
+    price: 2800,
+  },
+  {
+    id: "license_12",
+    storeLevel: 25,
+    price: 3000,
+  },
+  {
+    id: "license_13",
+    storeLevel: 30,
+    price: 3500,
+  },
+  {
+    id: "license_14",
+    storeLevel: 30,
+    price: 3500,
+  },
+  {
+    id: "license_15",
+    storeLevel: 42,
+    price: 5600,
+  },
+  {
+    id: "license_16",
+    storeLevel: 42,
+    price: 5600,
+  },
+  {
+    id: "license_17",
+    storeLevel: 42,
+    price: 5600,
+  },
+  {
+    id: "license_18",
+    storeLevel: 56,
+    price: 12500,
+  },
+  {
+    id: "license_19",
+    storeLevel: 56,
+    price: 12500,
+  },
+  {
+    id: "license_20",
+    storeLevel: 56,
+    price: 12500,
+  },
+  {
+    id: "license_21",
+    storeLevel: 63,
+    price: 20000,
+  },
+  {
+    id: "license_22",
+    storeLevel: 70,
+    price: 22000,
+  },
+  {
+    id: "license_23",
+    storeLevel: 70,
+    price: 22000,
+  },
+  {
+    id: "license_24",
+    storeLevel: 70,
+    price: 22000,
+  },
+  {
+    id: "license_25",
+    storeLevel: 81,
+    price: 34600,
+  },
+  {
+    id: "license_26",
+    storeLevel: 81,
+    price: 34600,
+  },
+  {
+    id: "license_27",
+    storeLevel: 81,
+    price: 34600,
+  },
+  {
+    id: "license_28",
+    storeLevel: 81,
+    price: 34600,
+  },
+  {
+    id: "license_29",
+    storeLevel: 90,
+    price: 65000,
+  },
+];
+const growth: Growth[] = [
+  {
+    sectionNum: "1",
+    storeLevel: 0,
+    price: 0,
+  },
+  {
+    sectionNum: "2",
+    storeLevel: 4,
+    price: 350,
+  },
+  {
+    sectionNum: "3",
+    storeLevel: 6,
+    price: 750,
+  },
+  {
+    sectionNum: "4",
+    storeLevel: 9,
+    price: 1300,
+  },
+  {
+    sectionNum: "5",
+    storeLevel: 14,
+    price: 2600,
+  },
+  {
+    sectionNum: "6",
+    storeLevel: 18,
+    price: 4400,
+  },
+  {
+    sectionNum: "7",
+    storeLevel: 23,
+    price: 6700,
+  },
+  {
+    sectionNum: "8",
+    storeLevel: 26,
+    price: 11000,
+  },
+  {
+    sectionNum: "9",
+    storeLevel: 31,
+    price: 16500,
+  },
+  {
+    sectionNum: "10",
+    storeLevel: 37,
+    price: 20100,
+  },
+  {
+    sectionNum: "11",
+    storeLevel: 40,
+    price: 24600,
+  },
+  {
+    sectionNum: "12",
+    storeLevel: 45,
+    price: 31000,
+  },
+  {
+    sectionNum: "13",
+    storeLevel: 50,
+    price: 40000,
+  },
+  {
+    sectionNum: "14",
+    storeLevel: 55,
+    price: 52000,
+  },
+  {
+    sectionNum: "15",
+    storeLevel: 60,
+    price: 64500,
+  },
+  {
+    sectionNum: "16",
+    storeLevel: 65,
+    price: 72600,
+  },
+  {
+    sectionNum: "17",
+    storeLevel: 70,
+    price: 83500,
+  },
+  {
+    sectionNum: "18",
+    storeLevel: 75,
+    price: 90000,
+  },
+  {
+    sectionNum: "19",
+    storeLevel: 80,
+    price: 102000,
+  },
+  {
+    sectionNum: "20",
+    storeLevel: 85,
+    price: 115000,
+  },
+  {
+    sectionNum: "21",
+    storeLevel: 86,
+    price: 132000,
+  },
+  {
+    sectionNum: "22",
+    storeLevel: 87,
+    price: 146000,
+  },
+  {
+    sectionNum: "23",
+    storeLevel: 88,
+    price: 160000,
+  },
+  {
+    sectionNum: "24",
+    storeLevel: 89,
+    price: 160000,
+  },
+  {
+    sectionNum: "25",
+    storeLevel: 90,
+    price: 160000,
+  },
+  {
+    sectionNum: "26",
+    storeLevel: 91,
+    price: 160000,
+  },
+  {
+    sectionNum: "27",
+    storeLevel: 92,
+    price: 160000,
+  },
+  {
+    sectionNum: "28",
+    storeLevel: 93,
+    price: 160000,
+  },
+  {
+    sectionNum: "29",
+    storeLevel: 94,
+    price: 160000,
+  },
+  {
+    sectionNum: "30",
+    storeLevel: 95,
+    price: 160000,
+  },
+  {
+    sectionNum: "31",
+    storeLevel: 96,
+    price: 160000,
+  },
+  {
+    sectionNum: "32",
+    storeLevel: 97,
+    price: 160000,
+  },
+  {
+    sectionNum: "33",
+    storeLevel: 99,
+    price: 160000,
+  },
+];
+const storage: Storage[] = [
+  {
+    sectionNum: "1",
+    storeLevel: 0,
+    price: 800,
+  },
+  {
+    sectionNum: "2",
+    storeLevel: 7,
+    price: 800,
+  },
+  {
+    sectionNum: "3",
+    storeLevel: 11,
+    price: 1200,
+  },
+  {
+    sectionNum: "4",
+    storeLevel: 15,
+    price: 1881,
+  },
+  {
+    sectionNum: "5",
+    storeLevel: 20,
+    price: 2250,
+  },
+  {
+    sectionNum: "6",
+    storeLevel: 25,
+    price: 3600,
+  },
+  {
+    sectionNum: "7",
+    storeLevel: 30,
+    price: 4400,
+  },
+  {
+    sectionNum: "8",
+    storeLevel: 35,
+    price: 5200,
+  },
+  {
+    sectionNum: "9",
+    storeLevel: 40,
+    price: 6150,
+  },
+  {
+    sectionNum: "10",
+    storeLevel: 45,
+    price: 7750,
+  },
+  {
+    sectionNum: "11",
+    storeLevel: 50,
+    price: 8900,
+  },
+  {
+    sectionNum: "12",
+    storeLevel: 55,
+    price: 10000,
+  },
+  {
+    sectionNum: "13",
+    storeLevel: 60,
+    price: 12250,
+  },
+  {
+    sectionNum: "14",
+    storeLevel: 65,
+    price: 16500,
+  },
+  {
+    sectionNum: "15",
+    storeLevel: 75,
+    price: 25000,
+  },
+  {
+    sectionNum: "16",
+    storeLevel: 80,
+    price: 25000,
+  },
+  {
+    sectionNum: "17",
+    storeLevel: 85,
+    price: 25000,
+  },
+  {
+    sectionNum: "18",
+    storeLevel: 90,
+    price: 25000,
+  },
+  {
+    sectionNum: "19",
+    storeLevel: 92,
+    price: 25000,
+  },
+  {
+    sectionNum: "20",
+    storeLevel: 95,
+    price: 25000,
+  },
+  {
+    sectionNum: "21",
+    storeLevel: 99,
+    price: 25000,
+  },
+];
+const cashiers: Cashier[] = [
+  {
+    id: "cashier_1",
+    completeCheckout: 200,
+    storeLevel: 10,
+    dailyWage: 80,
+    hiringCost: 100,
+  },
+  {
+    id: "cashier_2",
+    completeCheckout: 400,
+    storeLevel: 20,
+    dailyWage: 80,
+    hiringCost: 100,
+  },
+  {
+    id: "cashier_3",
+    completeCheckout: 900,
+    storeLevel: 30,
+    dailyWage: 80,
+    hiringCost: 100,
+  },
+  {
+    id: "cashier_4",
+    completeCheckout: 1750,
+    storeLevel: 50,
+    dailyWage: 80,
+    hiringCost: 100,
+  },
+  {
+    id: "cashier_5",
+    completeCheckout: 2250,
+    storeLevel: 60,
+    dailyWage: 80,
+    hiringCost: 100,
+  },
+  {
+    id: "cashier_6",
+    completeCheckout: 2700,
+    storeLevel: 75,
+    dailyWage: 80,
+    hiringCost: 100,
+  },
+];
+const restockers: Restocker[] = [
+  {
+    id: "restocker_1",
+    numberOfRacks: 1,
+    storeLevel: 15,
+    dailyWage: 90,
+    hiringCost: 100,
+  },
+  {
+    id: "restocker_2",
+    numberOfRacks: 6,
+    storeLevel: 22,
+    dailyWage: 90,
+    hiringCost: 100,
+  },
+  {
+    id: "restocker_3",
+    numberOfRacks: 13,
+    storeLevel: 29,
+    dailyWage: 90,
+    hiringCost: 110,
+  },
+  {
+    id: "restocker_4",
+    numberOfRacks: 20,
+    storeLevel: 37,
+    dailyWage: 90,
+    hiringCost: 150,
+  },
+  {
+    id: "restocker_5",
+    numberOfRacks: 25,
+    storeLevel: 44,
+    dailyWage: 90,
+    hiringCost: 150,
+  },
+  {
+    id: "restocker_6",
+    numberOfRacks: 30,
+    storeLevel: 50,
+    dailyWage: 90,
+    hiringCost: 150,
+  },
+];
+const customerHelpers: CustomerHelper[] = [
+  {
+    id: "customer_helper_1",
+    numberOfCheckouts: 1,
+    storeLevel: 5,
+    dailyWage: 80,
+    hiringCost: 150,
+  },
+  {
+    id: "customer_helper_2",
+    numberOfCheckouts: 4,
+    storeLevel: 10,
+    dailyWage: 80,
+    hiringCost: 150,
+  },
+  {
+    id: "customer_helper_3",
+    numberOfCheckouts: 4,
+    storeLevel: 16,
+    dailyWage: 80,
+    hiringCost: 180,
+  },
+  {
+    id: "customer_helper_4",
+    numberOfCheckouts: 4,
+    storeLevel: 22,
+    dailyWage: 80,
+    hiringCost: 180,
+  },
+  {
+    id: "customer_helper_5",
+    numberOfCheckouts: 4,
+    storeLevel: 28,
+    dailyWage: 80,
+    hiringCost: 200,
+  },
+  {
+    id: "customer_helper_6",
+    numberOfCheckouts: 4,
+    storeLevel: 34,
+    dailyWage: 80,
+    hiringCost: 200,
+  },
+];
+const securityGuards: SecurityGuard[] = [
+  {
+    id: "security_guard_1",
+    storeLevel: 15,
+    dailyWage: 120,
+    hiringCost: 200,
+  },
+  {
+    id: "security_guard_2",
+    storeLevel: 20,
+    dailyWage: 120,
+    hiringCost: 300,
+  },
+];
+const janitors: Janitor[] = [
+  {
+    id: "janitor_1",
+    storeLevel: 5,
+    dailyWage: 80,
+    hiringCost: 150,
+  },
+  {
+    id: "janitor_2",
+    storeLevel: 15,
+    dailyWage: 80,
+    hiringCost: 200,
+  },
+  {
+    id: "janitor_3",
+    storeLevel: 25,
+    dailyWage: 80,
+    hiringCost: 250,
+  },
+];
+const hiring: Hiring = {
+  cashiers,
+  restockers,
+  customerHelpers,
+  securityGuards,
+  janitors,
+};
+const customizations: Customization[] = [
+  {
+    name: "Store Name",
+    description: "Change the name of the store",
+    price: 250,
+  },
+  {
+    name: "Entrance Position",
+    description: "Change the position of the entrance",
+    price: 700,
+  },
+  {
+    name: "Change Entrance",
+    description: "Change the appearance of the entrance",
+    price: 750,
+  },
+];
+
+export const management: Management = {
+  licenses,
+  growth,
+  storage,
+  hiring,
+  customizations,
+};
