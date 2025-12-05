@@ -3,7 +3,13 @@
 import { Sidebar, SidebarItem, SidebarItemGroup, SidebarItems } from "flowbite-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { HiChartPie, HiCog, HiCurrencyDollar, HiHome } from "react-icons/hi";
+import {
+	HiChartPie,
+	HiCog,
+	HiCurrencyDollar,
+	HiHome,
+	HiOfficeBuilding,
+} from "react-icons/hi";
 import { usePlaythrough } from "@/lib/contexts/PlaythroughContext";
 import { useUI } from "@/lib/contexts/UIContext";
 import { PlaythroughSwitcher } from "./PlaythroughSwitcher";
@@ -55,6 +61,14 @@ export function AppSidebar() {
 											active={pathname === "/bank"}
 										>
 											Bank
+										</SidebarItem>
+										<SidebarItem
+											as={Link}
+											href="/management"
+											icon={HiOfficeBuilding}
+											active={pathname === "/management"}
+										>
+											Management
 										</SidebarItem>
 									</>
 								)}

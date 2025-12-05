@@ -44,6 +44,9 @@ export function PlaythroughProvider({ children }: { children: React.ReactNode })
 			id: crypto.randomUUID(),
 			createdAt: now,
 			lastModified: now,
+			// Auto-unlock starter license and growth
+			unlockedLicenses: ["license_0"],
+			unlockedGrowth: ["1"],
 		};
 
 		setAppData((prev) => {

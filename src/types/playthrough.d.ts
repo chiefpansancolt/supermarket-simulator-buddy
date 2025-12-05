@@ -12,6 +12,10 @@ export interface Playthrough {
   description?: string;
   storeLevel?: number;
   activeLoans?: ActiveLoan[];
+  unlockedLicenses?: string[];
+  unlockedGrowth?: string[];
+  unlockedStorage?: string[];
+  hiredEmployees?: string[];
   // Future: Add progress tracking fields here
 }
 
