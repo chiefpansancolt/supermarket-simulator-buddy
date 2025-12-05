@@ -4,6 +4,15 @@ export interface ActiveLoan {
   activatedDate: string;
 }
 
+export interface ShoppingListItem {
+  id: string;
+  productName: string;
+  company?: string;
+  boxes: number;
+  purchased: boolean;
+  store: string;
+}
+
 export interface Playthrough {
   id: string;
   name: string;
@@ -18,6 +27,7 @@ export interface Playthrough {
   hiredEmployees?: string[];
   unlockedTools?: string[];
   unlockedVehicles?: string[];
+  shoppingList?: ShoppingListItem[];
   // Future: Add progress tracking fields here
 }
 

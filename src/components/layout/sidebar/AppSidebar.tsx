@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
 	HiChartPie,
+	HiClipboardList,
 	HiCog,
 	HiCurrencyDollar,
 	HiHome,
@@ -78,6 +79,14 @@ export function AppSidebar() {
 											active={pathname === "/bank"}
 										>
 											Bank
+										</SidebarItem>
+										<SidebarItem
+											as={Link}
+											href="/shopping-list"
+											icon={HiClipboardList}
+											active={pathname === "/shopping-list"}
+										>
+											Shopping List
 										</SidebarItem>
 									</>
 								)}
