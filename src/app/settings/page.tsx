@@ -1,8 +1,15 @@
 "use client";
 
-import { Alert, Badge, Button, Card, Modal, ModalBody, ModalFooter, ModalHeader, Label, FileInput } from "flowbite-react";
+import { Alert, Badge, Button, Card, FileInput, Label } from "flowbite-react";
 import { useRef, useState } from "react";
-import { HiCheckCircle, HiDownload, HiExclamationCircle, HiTrash, HiUpload, HiInformationCircle } from "react-icons/hi";
+import {
+	HiCheckCircle,
+	HiDownload,
+	HiExclamationCircle,
+	HiInformationCircle,
+	HiTrash,
+	HiUpload,
+} from "react-icons/hi";
 import { usePlaythrough } from "@/lib/contexts/PlaythroughContext";
 
 export default function Settings() {
@@ -100,8 +107,8 @@ export default function Settings() {
 					<Alert color="info" icon={HiInformationCircle}>
 						<div className="mb-1 text-lg font-medium">Data Storage!</div>
 						<p className="mb-1">
-							Your data is stored locally in the browser. Data is lost when the browser
-							cache is cleared.
+							Your data is stored locally in the browser. Data is lost when the
+							browser cache is cleared.
 						</p>
 						<p>Please use the functions below to export and backup your data.</p>
 					</Alert>
@@ -118,10 +125,12 @@ export default function Settings() {
 					</Alert>
 				)}
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+				<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
 					<Card>
 						<div className="mb-4 flex items-center justify-between">
-							<h2 className="text-gray-900 dark:text-white text-xl font-bold">Data Management</h2>
+							<h2 className="text-xl font-bold text-gray-900 dark:text-white">
+								Data Management
+							</h2>
 							<Badge color="info">
 								{playthroughs.length}{" "}
 								{playthroughs.length === 1 ? "Playthrough" : "Playthroughs"}
@@ -196,7 +205,9 @@ export default function Settings() {
 					</Card>
 
 					<Card>
-						<h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">About</h2>
+						<h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+							About
+						</h2>
 						<div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
 							<p>
 								<strong className="text-gray-900 dark:text-white">
@@ -204,8 +215,8 @@ export default function Settings() {
 								</strong>
 							</p>
 							<p>
-								A progress tracking tool for Supermarket Simulator. All data is stored
-								locally in your browser.
+								A progress tracking tool for Supermarket Simulator. All data is
+								stored locally in your browser.
 							</p>
 						</div>
 					</Card>
