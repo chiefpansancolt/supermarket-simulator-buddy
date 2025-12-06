@@ -1,11 +1,11 @@
 "use client";
 
+import { TabItem, Tabs } from "flowbite-react";
 import { redirect } from "next/navigation";
-import { Tabs, TabItem } from "flowbite-react";
 import { usePlaythrough } from "@/lib/contexts/PlaythroughContext";
-import { ProductsTab } from "./ProductsTab";
 import { FurnitureTab } from "./FurnitureTab";
 import { PaintTab } from "./PaintTab";
+import { ProductsTab } from "./ProductsTab";
 import { ToolsTab } from "./ToolsTab";
 import { VehiclesTab } from "./VehiclesTab";
 
@@ -36,9 +36,7 @@ export default function MarketPage() {
 
 	return (
 		<div className="p-6">
-			<h1 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-				Market
-			</h1>
+			<h1 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">Market</h1>
 
 			<Tabs aria-label="Market tabs" variant="underline">
 				<TabItem active title="Products">

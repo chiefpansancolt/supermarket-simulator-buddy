@@ -12,13 +12,13 @@ import {
 	HiTrash,
 	HiTrendingUp,
 } from "react-icons/hi";
+import type { Loan } from "@/types";
 import { usePlaythrough } from "@/lib/contexts/PlaythroughContext";
-import { DeleteConfirmModal } from "@/comps/modals/DeleteConfirmModal";
-import { EditPlaythroughModal } from "@/comps/modals/EditPlaythroughModal";
+import { bank } from "@/data/supermarket-simulator/bank";
 import { management } from "@/data/supermarket-simulator/management";
 import { market } from "@/data/supermarket-simulator/market";
-import { bank } from "@/data/supermarket-simulator/bank";
-import type { Loan } from "@/types";
+import { DeleteConfirmModal } from "@/comps/modals/DeleteConfirmModal";
+import { EditPlaythroughModal } from "@/comps/modals/EditPlaythroughModal";
 
 export default function Dashboard() {
 	const { activePlaythrough, updatePlaythrough, deletePlaythrough } = usePlaythrough();

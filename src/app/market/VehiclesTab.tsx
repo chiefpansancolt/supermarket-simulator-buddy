@@ -1,12 +1,9 @@
 import { Badge, Button, Card } from "flowbite-react";
 import { HiCheckCircle, HiLockClosed } from "react-icons/hi";
-import { market } from "@/data/supermarket-simulator/market";
 import type { VehiclesTabProps } from "@/types";
+import { market } from "@/data/supermarket-simulator/market";
 
-export function VehiclesTab({
-	activePlaythrough,
-	onUnlockVehicle,
-}: VehiclesTabProps) {
+export function VehiclesTab({ activePlaythrough, onUnlockVehicle }: VehiclesTabProps) {
 	const currentStoreLevel = activePlaythrough.storeLevel ?? 0;
 	const unlockedVehicles = activePlaythrough.unlockedVehicles || [];
 
@@ -27,8 +24,7 @@ export function VehiclesTab({
 							Total Spent on Vehicles
 						</h3>
 						<p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-							{unlockedVehicles.length} of {market.vehicles.length} vehicles
-							unlocked
+							{unlockedVehicles.length} of {market.vehicles.length} vehicles unlocked
 						</p>
 					</div>
 					<div className="text-3xl font-bold text-blue-600 dark:text-blue-400">
@@ -47,7 +43,7 @@ export function VehiclesTab({
 							{unlocked && (
 								<Badge
 									color="success"
-									className="absolute right-4 top-4"
+									className="absolute top-4 right-4"
 									icon={HiCheckCircle}
 								>
 									Unlocked
@@ -97,8 +93,8 @@ export function VehiclesTab({
 											<div>
 												{!meetsLevel && (
 													<p className="mb-2 text-sm text-red-600 dark:text-red-400">
-														Store level {vehicle.storeLevel} required (currently{" "}
-														{currentStoreLevel})
+														Store level {vehicle.storeLevel} required
+														(currently {currentStoreLevel})
 													</p>
 												)}
 												<Button

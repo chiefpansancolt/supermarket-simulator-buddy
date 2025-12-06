@@ -1,7 +1,7 @@
 import { Badge, Button, Card } from "flowbite-react";
 import { HiCheckCircle, HiLockClosed } from "react-icons/hi";
-import { market } from "@/data/supermarket-simulator/market";
 import type { ToolsTabProps } from "@/types";
+import { market } from "@/data/supermarket-simulator/market";
 
 export function ToolsTab({ activePlaythrough, onUnlockTool }: ToolsTabProps) {
 	const unlockedTools = activePlaythrough.unlockedTools || [];
@@ -42,7 +42,7 @@ export function ToolsTab({ activePlaythrough, onUnlockTool }: ToolsTabProps) {
 							{unlocked && (
 								<Badge
 									color="success"
-									className="absolute right-4 top-4"
+									className="absolute top-4 right-4"
 									icon={HiCheckCircle}
 								>
 									Unlocked
@@ -70,7 +70,9 @@ export function ToolsTab({ activePlaythrough, onUnlockTool }: ToolsTabProps) {
 										</p>
 									)}
 									<div className="mt-2 text-xl font-semibold text-blue-600 dark:text-blue-400">
-										{tool.unitPrice === 0 ? "Free" : `$${tool.unitPrice.toLocaleString()}`}
+										{tool.unitPrice === 0
+											? "Free"
+											: `$${tool.unitPrice.toLocaleString()}`}
 									</div>
 
 									<div className="mt-4">

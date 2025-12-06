@@ -1,7 +1,7 @@
 import { Badge, Button, Card } from "flowbite-react";
 import { HiCheckCircle, HiLockClosed } from "react-icons/hi";
-import { management } from "@/data/supermarket-simulator/management";
 import type { StorageTabProps } from "@/types";
+import { management } from "@/data/supermarket-simulator/management";
 
 export function StorageTab({ activePlaythrough, onUnlockStorage, onLockStorage }: StorageTabProps) {
 	const currentStoreLevel = activePlaythrough.storeLevel ?? 0;
@@ -42,65 +42,70 @@ export function StorageTab({ activePlaythrough, onUnlockStorage, onLockStorage }
 			</Card>
 
 			<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-			{management.storage.map((storage, index) => {
-				const unlocked = isStorageUnlocked(storage.sectionNum);
-				const canUnlock = canUnlockStorage(index, storage.storeLevel);
+				{management.storage.map((storage, index) => {
+					const unlocked = isStorageUnlocked(storage.sectionNum);
+					const canUnlock = canUnlockStorage(index, storage.storeLevel);
 
-				return (
-					<Card key={storage.sectionNum}>
-						<div className="flex items-center justify-between">
-							<div className="flex-1">
-								<h3 className="text-lg font-bold text-gray-900 dark:text-white">
-									Storage Section {storage.sectionNum}
-								</h3>
-								<div className="mt-2 flex gap-4 text-sm text-gray-600 dark:text-gray-400">
-									<span>Store Level: {storage.storeLevel}</span>
-									<span>Price: {storage.price === 0 ? "Free" : `$${storage.price.toLocaleString()}`}</span>
-									<span>Size: 4x4</span>
+					return (
+						<Card key={storage.sectionNum}>
+							<div className="flex items-center justify-between">
+								<div className="flex-1">
+									<h3 className="text-lg font-bold text-gray-900 dark:text-white">
+										Storage Section {storage.sectionNum}
+									</h3>
+									<div className="mt-2 flex gap-4 text-sm text-gray-600 dark:text-gray-400">
+										<span>Store Level: {storage.storeLevel}</span>
+										<span>
+											Price:{" "}
+											{storage.price === 0
+												? "Free"
+												: `$${storage.price.toLocaleString()}`}
+										</span>
+										<span>Size: 4x4</span>
+									</div>
+								</div>
+
+								<div className="ml-4 flex gap-2">
+									{unlocked ? (
+										<>
+											<Badge
+												color="success"
+												icon={HiCheckCircle}
+												className="text-sm"
+											>
+												Unlocked
+											</Badge>
+											<Button
+												color="red"
+												outline
+												size="sm"
+												onClick={() => onLockStorage(storage.sectionNum)}
+											>
+												Undo
+											</Button>
+										</>
+									) : (
+										<Button
+											color="blue"
+											size="sm"
+											onClick={() => onUnlockStorage(storage.sectionNum)}
+											disabled={!canUnlock}
+										>
+											{canUnlock ? (
+												"Unlock"
+											) : (
+												<>
+													<HiLockClosed className="mr-2 h-4 w-4" />
+													Locked
+												</>
+											)}
+										</Button>
+									)}
 								</div>
 							</div>
-
-							<div className="ml-4 flex gap-2">
-								{unlocked ? (
-									<>
-										<Badge
-											color="success"
-											icon={HiCheckCircle}
-											className="text-sm"
-										>
-											Unlocked
-										</Badge>
-										<Button
-											color="red"
-											outline
-											size="sm"
-											onClick={() => onLockStorage(storage.sectionNum)}
-										>
-											Undo
-										</Button>
-									</>
-								) : (
-									<Button
-										color="blue"
-										size="sm"
-										onClick={() => onUnlockStorage(storage.sectionNum)}
-										disabled={!canUnlock}
-									>
-										{canUnlock ? (
-											"Unlock"
-										) : (
-											<>
-												<HiLockClosed className="mr-2 h-4 w-4" />
-												Locked
-											</>
-										)}
-									</Button>
-								)}
-							</div>
-						</div>
-					</Card>
-				);
-			})}
+						</Card>
+					);
+				})}
 			</div>
 		</div>
 	);

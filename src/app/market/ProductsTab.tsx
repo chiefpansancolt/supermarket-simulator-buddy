@@ -1,12 +1,9 @@
-import { useState } from "react";
 import { Badge, Card, Label, Select, TextInput } from "flowbite-react";
+import { useState } from "react";
 import { HiSearch } from "react-icons/hi";
-import { market } from "@/data/supermarket-simulator/market";
-import {
-	DISPLAY_TYPES,
-	CATEGORIES,
-} from "@/data/constants/supermarket-simulator";
 import type { ProductsTabProps } from "@/types";
+import { CATEGORIES, DISPLAY_TYPES } from "@/data/constants/supermarket-simulator";
+import { market } from "@/data/supermarket-simulator/market";
 
 export function ProductsTab({ activePlaythrough }: ProductsTabProps) {
 	const unlockedLicenses = activePlaythrough.unlockedLicenses || [];
@@ -26,10 +23,8 @@ export function ProductsTab({ activePlaythrough }: ProductsTabProps) {
 			const matchesSearch =
 				product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
 				product.company?.toLowerCase().includes(searchTerm.toLowerCase());
-			const matchesDisplay =
-				displayFilter === "all" || product.displayType === displayFilter;
-			const matchesCategory =
-				categoryFilter === "all" || product.category === categoryFilter;
+			const matchesDisplay = displayFilter === "all" || product.displayType === displayFilter;
+			const matchesCategory = categoryFilter === "all" || product.category === categoryFilter;
 
 			return matchesSearch && matchesDisplay && matchesCategory;
 		});
@@ -43,7 +38,7 @@ export function ProductsTab({ activePlaythrough }: ProductsTabProps) {
 		market.products.filter((product) => !unlockedLicenses.includes(product.licenseId))
 	);
 
-	const renderProductCard = (product: typeof market.products[0], unlocked: boolean) => (
+	const renderProductCard = (product: (typeof market.products)[0], unlocked: boolean) => (
 		<Card key={product.name + product.company} className={unlocked ? "" : "opacity-60"}>
 			<div className="flex gap-4">
 				{product.imageUrl && (

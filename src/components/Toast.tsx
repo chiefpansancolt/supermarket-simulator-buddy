@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
 import { Toast, ToastToggle } from "flowbite-react";
 import { twMerge } from "flowbite-react/helpers/tailwind-merge";
+import { ReactNode } from "react";
 import { HiCheck, HiExclamation, HiInformationCircle, HiX } from "react-icons/hi";
 import { CustomToastProps } from "@/types";
 

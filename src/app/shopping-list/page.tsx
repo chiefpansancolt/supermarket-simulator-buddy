@@ -21,16 +21,16 @@ import {
 import { redirect } from "next/navigation";
 import { useState } from "react";
 import { HiPlus, HiRefresh, HiSearch, HiTrash } from "react-icons/hi";
+import type { PendingItem, ShoppingListItem } from "@/types";
 import { usePlaythrough } from "@/lib/contexts/PlaythroughContext";
-import { market } from "@/data/supermarket-simulator/market";
-import type { ShoppingListItem, PendingItem } from "@/types";
 import {
-	LIQUOR_STORE_LOCATION,
-	JANITORIAL_SUPPLY_LOCATION,
 	DELI_AND_GROCERY_LOCATION,
-	MEAT_AND_DAIRY_LOCATION,
 	GREEN_MARKET_LOCATION,
+	JANITORIAL_SUPPLY_LOCATION,
+	LIQUOR_STORE_LOCATION,
+	MEAT_AND_DAIRY_LOCATION,
 } from "@/data/constants/supermarket-simulator";
+import { market } from "@/data/supermarket-simulator/market";
 
 const formatLocationName = (location: string): string => {
 	switch (location) {
@@ -88,7 +88,7 @@ export default function ShoppingListPage() {
 	const [pendingItems, setPendingItems] = useState<PendingItem[]>([]);
 	const [searchTerm, setSearchTerm] = useState("");
 
-	const handleAddProduct = (product: typeof availableProducts[0]) => {
+	const handleAddProduct = (product: (typeof availableProducts)[0]) => {
 		const productKey = `${product.name}|${product.company || ""}`;
 
 		const existingItem = pendingItems.find(
@@ -131,9 +131,7 @@ export default function ShoppingListPage() {
 	const handleDecrementBoxes = (itemId: string) => {
 		setPendingItems(
 			pendingItems.map((item) =>
-				item.id === itemId
-					? { ...item, boxes: Math.max(1, item.boxes - 1) }
-					: item
+				item.id === itemId ? { ...item, boxes: Math.max(1, item.boxes - 1) } : item
 			)
 		);
 	};
@@ -271,7 +269,7 @@ export default function ShoppingListPage() {
 														{boxCount > 0 && (
 															<Badge
 																color="success"
-																className="absolute right-2 top-2"
+																className="absolute top-2 right-2"
 															>
 																{boxCount}
 															</Badge>
@@ -337,7 +335,9 @@ export default function ShoppingListPage() {
 																	color="light"
 																	size="xs"
 																	onClick={() =>
-																		handleDecrementBoxes(item.id)
+																		handleDecrementBoxes(
+																			item.id
+																		)
 																	}
 																	disabled={item.boxes <= 1}
 																>
@@ -350,7 +350,9 @@ export default function ShoppingListPage() {
 																	color="light"
 																	size="xs"
 																	onClick={() =>
-																		handleIncrementBoxes(item.id)
+																		handleIncrementBoxes(
+																			item.id
+																		)
 																	}
 																>
 																	+
@@ -365,9 +367,7 @@ export default function ShoppingListPage() {
 																color="light"
 																size="sm"
 																onClick={() =>
-																	handleRemoveFromPending(
-																		item.id
-																	)
+																	handleRemoveFromPending(item.id)
 																}
 															>
 																<HiTrash className="h-4 w-4" />
@@ -398,8 +398,8 @@ export default function ShoppingListPage() {
 							onClick={handleSubmitItems}
 							disabled={pendingItems.length === 0}
 						>
-							Add {pendingItems.length} Item{pendingItems.length !== 1 ? "s" : ""}{" "}
-							to List
+							Add {pendingItems.length} Item{pendingItems.length !== 1 ? "s" : ""} to
+							List
 						</Button>
 					</ModalFooter>
 				</Modal>
@@ -478,7 +478,8 @@ export default function ShoppingListPage() {
 															{item.company && ` - ${item.company}`}
 														</p>
 														<p className="text-sm text-gray-600 dark:text-gray-400">
-															{item.boxes} box{item.boxes > 1 ? "es" : ""}
+															{item.boxes} box
+															{item.boxes > 1 ? "es" : ""}
 														</p>
 													</div>
 													<Button

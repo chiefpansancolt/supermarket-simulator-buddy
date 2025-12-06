@@ -1,16 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { Button } from "flowbite-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "flowbite-react";
+import { useState } from "react";
 import {
+	HiChartBar,
 	HiCheckCircle,
+	HiClipboardList,
 	HiCurrencyDollar,
 	HiShoppingCart,
 	HiTrendingUp,
-	HiClipboardList,
-	HiChartBar,
 } from "react-icons/hi";
 
 export default function Home() {
@@ -23,35 +23,30 @@ export default function Home() {
 	const faqs = [
 		{
 			question: "What is Supermarket Simulator Buddy?",
-			answer:
-				"Supermarket Simulator Buddy is a comprehensive progress tracking tool for the game Supermarket Simulator. It helps you manage multiple playthroughs, track your store growth, manage licenses, and monitor your financial progress all in one place.",
+			answer: "Supermarket Simulator Buddy is a comprehensive progress tracking tool for the game Supermarket Simulator. It helps you manage multiple playthroughs, track your store growth, manage licenses, and monitor your financial progress all in one place.",
 		},
 		{
 			question: "How does it store my data?",
-			answer:
-				"All your data is stored locally in your browser using localStorage. This means your progress is private and doesn't require any server or account creation. You can also export and import your data as JSON files for backup or sharing.",
+			answer: "All your data is stored locally in your browser using localStorage. This means your progress is private and doesn't require any server or account creation. You can also export and import your data as JSON files for backup or sharing.",
 		},
 		{
 			question: "Can I track multiple playthroughs?",
-			answer:
-				"Yes! You can create and manage multiple playthroughs, each with its own progress tracking. Switch between them easily using the sidebar dropdown and track different strategies or challenge runs separately.",
+			answer: "Yes! You can create and manage multiple playthroughs, each with its own progress tracking. Switch between them easily using the sidebar dropdown and track different strategies or challenge runs separately.",
 		},
 		{
 			question: "What features can I track?",
-			answer:
-				"Track your store level, licenses, storage sections, growth areas, furniture, paint, tools, vehicles, and shopping lists. Monitor your financial progress with detailed budget tracking across all categories.",
+			answer: "Track your store level, licenses, storage sections, growth areas, furniture, paint, tools, vehicles, and shopping lists. Monitor your financial progress with detailed budget tracking across all categories.",
 		},
 		{
 			question: "Is this app free to use?",
-			answer:
-				"Yes, Supermarket Simulator Buddy is completely free to use. There are no subscriptions, no ads, and no hidden costs. All features are available to everyone.",
+			answer: "Yes, Supermarket Simulator Buddy is completely free to use. There are no subscriptions, no ads, and no hidden costs. All features are available to everyone.",
 		},
 	];
 
 	return (
 		<div className="bg-white dark:bg-gray-900">
 			<main>
-				<div className="relative isolate overflow-hidden pb-16 pt-14 sm:pb-20">
+				<div className="relative isolate overflow-hidden pt-14 pb-16 sm:pb-20">
 					<Image
 						src="/assets/images/Background.png"
 						alt=""
@@ -74,10 +69,10 @@ export default function Home() {
 					<div className="mx-auto max-w-7xl px-6 lg:px-8">
 						<div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
 							<div className="text-center">
-								<h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl dark:text-white">
+								<h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl dark:text-white">
 									Track Your Supermarket Empire
 								</h1>
-								<p className="mt-8 text-pretty text-lg font-medium text-gray-600 sm:text-xl/8 dark:text-gray-400">
+								<p className="mt-8 text-lg font-medium text-pretty text-gray-600 sm:text-xl/8 dark:text-gray-400">
 									The ultimate companion app for Supermarket Simulator. Manage
 									multiple playthroughs, track your progress, and build your
 									supermarket empire with confidence.
@@ -121,8 +116,8 @@ export default function Home() {
 							</p>
 							<p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
 								Supermarket Simulator Buddy provides comprehensive tracking for
-								every aspect of your supermarket business. From licenses to
-								storage, we've got you covered.
+								every aspect of your supermarket business. From licenses to storage,
+								we've got you covered.
 							</p>
 						</div>
 					</div>
@@ -144,7 +139,7 @@ export default function Home() {
 						<dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base/7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16 dark:text-gray-400">
 							<div className="relative pl-9">
 								<dt className="inline font-semibold text-gray-900 dark:text-white">
-									<HiShoppingCart className="absolute left-1 top-1 size-5 text-blue-600 dark:text-blue-400" />
+									<HiShoppingCart className="absolute top-1 left-1 size-5 text-blue-600 dark:text-blue-400" />
 									Multiple Playthroughs
 								</dt>
 								<dd>
@@ -154,7 +149,7 @@ export default function Home() {
 							</div>
 							<div className="relative pl-9">
 								<dt className="inline font-semibold text-gray-900 dark:text-white">
-									<HiCheckCircle className="absolute left-1 top-1 size-5 text-blue-600 dark:text-blue-400" />
+									<HiCheckCircle className="absolute top-1 left-1 size-5 text-blue-600 dark:text-blue-400" />
 									License Management
 								</dt>
 								<dd>
@@ -164,7 +159,7 @@ export default function Home() {
 							</div>
 							<div className="relative pl-9">
 								<dt className="inline font-semibold text-gray-900 dark:text-white">
-									<HiTrendingUp className="absolute left-1 top-1 size-5 text-blue-600 dark:text-blue-400" />
+									<HiTrendingUp className="absolute top-1 left-1 size-5 text-blue-600 dark:text-blue-400" />
 									Store Growth
 								</dt>
 								<dd>
@@ -174,7 +169,7 @@ export default function Home() {
 							</div>
 							<div className="relative pl-9">
 								<dt className="inline font-semibold text-gray-900 dark:text-white">
-									<HiCurrencyDollar className="absolute left-1 top-1 size-5 text-blue-600 dark:text-blue-400" />
+									<HiCurrencyDollar className="absolute top-1 left-1 size-5 text-blue-600 dark:text-blue-400" />
 									Budget Tracking
 								</dt>
 								<dd>
@@ -184,7 +179,7 @@ export default function Home() {
 							</div>
 							<div className="relative pl-9">
 								<dt className="inline font-semibold text-gray-900 dark:text-white">
-									<HiClipboardList className="absolute left-1 top-1 size-5 text-blue-600 dark:text-blue-400" />
+									<HiClipboardList className="absolute top-1 left-1 size-5 text-blue-600 dark:text-blue-400" />
 									Shopping Lists
 								</dt>
 								<dd>
@@ -193,7 +188,7 @@ export default function Home() {
 							</div>
 							<div className="relative pl-9">
 								<dt className="inline font-semibold text-gray-900 dark:text-white">
-									<HiChartBar className="absolute left-1 top-1 size-5 text-blue-600 dark:text-blue-400" />
+									<HiChartBar className="absolute top-1 left-1 size-5 text-blue-600 dark:text-blue-400" />
 									Data Export/Import
 								</dt>
 								<dd>
@@ -368,7 +363,7 @@ export default function Home() {
 									</li>
 								</ul>
 								<div className="mt-8 rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800">
-									<h4 className="text-xs font-semibold uppercase tracking-wider text-gray-900 dark:text-white">
+									<h4 className="text-xs font-semibold tracking-wider text-gray-900 uppercase dark:text-white">
 										Disclaimer
 									</h4>
 									<p className="mt-2 text-xs/5 text-gray-600 dark:text-gray-400">

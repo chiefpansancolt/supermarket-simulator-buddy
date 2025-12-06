@@ -73,9 +73,7 @@ export default function ManagementPage() {
 		<main className="min-h-screen bg-gray-50 p-8 dark:bg-gray-900">
 			<div className="mx-auto">
 				<div className="mb-8">
-					<h1 className="text-4xl font-bold text-gray-900 dark:text-white">
-						Management
-					</h1>
+					<h1 className="text-4xl font-bold text-gray-900 dark:text-white">Management</h1>
 					<p className="mt-2 text-lg text-gray-600 dark:text-gray-400">
 						Manage licenses, growth, storage, hiring, and customizations for{" "}
 						{activePlaythrough.name}

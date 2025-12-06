@@ -13,7 +13,8 @@ export function CustomizationsTab() {
 						{customization.description}
 					</p>
 					<div className="text-lg font-semibold text-gray-900 dark:text-white">
-						<span className="text-gray-600 dark:text-gray-400">Price:</span> ${customization.price.toLocaleString()}
+						<span className="text-gray-600 dark:text-gray-400">Price:</span> $
+						{customization.price.toLocaleString()}
 					</div>
 				</Card>
 			))}

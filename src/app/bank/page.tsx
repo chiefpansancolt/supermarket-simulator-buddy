@@ -4,9 +4,9 @@ import { Badge, Button, Card, Label, RangeSlider } from "flowbite-react";
 import { redirect } from "next/navigation";
 import { useState } from "react";
 import { HiCheckCircle } from "react-icons/hi";
-import { bank } from "@/data/supermarket-simulator/bank";
-import { usePlaythrough } from "@/lib/contexts/PlaythroughContext";
 import type { Loan } from "@/types";
+import { usePlaythrough } from "@/lib/contexts/PlaythroughContext";
+import { bank } from "@/data/supermarket-simulator/bank";
 
 export default function BankPage() {
 	const { activePlaythrough, updatePlaythrough } = usePlaythrough();
@@ -24,8 +24,8 @@ export default function BankPage() {
 				acc[index] = activeLoan?.termLength || loan.minTermLength;
 				return acc;
 			},
-			{} as Record<number, number>,
-		),
+			{} as Record<number, number>
+		)
 	);
 
 	const handleSliderChange = (loanIndex: number, value: number) => {
@@ -87,8 +87,10 @@ export default function BankPage() {
 				<div className="grid grid-cols-1 gap-6 md:grid-cols-2">
 					{bank.loans.map((loan, index) => {
 						const termLength = termLengths[index];
-						const { dailyPayment, totalPayment, totalInterest } =
-							calculateLoanDetails(loan, termLength);
+						const { dailyPayment, totalPayment, totalInterest } = calculateLoanDetails(
+							loan,
+							termLength
+						);
 						const active = isLoanActive(index);
 						const activeLoan = activeLoans.find((al) => al.loanIndex === index);
 						const currentStoreLevel = activePlaythrough.storeLevel ?? 0;
@@ -99,7 +101,7 @@ export default function BankPage() {
 								{active && (
 									<Badge
 										color="success"
-										className="absolute right-4 top-4"
+										className="absolute top-4 right-4"
 										icon={HiCheckCircle}
 									>
 										Active
@@ -183,7 +185,9 @@ export default function BankPage() {
 										<p className="text-sm text-gray-600 dark:text-gray-400">
 											Activated on:{" "}
 											{activeLoan &&
-												new Date(activeLoan.activatedDate).toLocaleDateString()}
+												new Date(
+													activeLoan.activatedDate
+												).toLocaleDateString()}
 										</p>
 										<Button
 											color="red"

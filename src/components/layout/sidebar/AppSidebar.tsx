@@ -34,7 +34,7 @@ export function AppSidebar() {
 
 					<StoreLevel />
 
-					<div className="flex-1 overflow-y-auto mt-2">
+					<div className="mt-2 flex-1 overflow-y-auto">
 						<SidebarItems>
 							<SidebarItemGroup>
 								<SidebarItem

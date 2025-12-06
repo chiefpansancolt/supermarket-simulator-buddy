@@ -1,13 +1,9 @@
 import { Badge, Button, Card } from "flowbite-react";
 import { HiCheckCircle, HiLockClosed } from "react-icons/hi";
-import { management } from "@/data/supermarket-simulator/management";
 import type { HiringTabProps } from "@/types";
+import { management } from "@/data/supermarket-simulator/management";
 
-export function HiringTab({
-	activePlaythrough,
-	onHireEmployee,
-	onFireEmployee,
-}: HiringTabProps) {
+export function HiringTab({ activePlaythrough, onHireEmployee, onFireEmployee }: HiringTabProps) {
 	const currentStoreLevel = activePlaythrough.storeLevel ?? 0;
 	const hiredEmployees = activePlaythrough.hiredEmployees || [];
 
@@ -62,9 +58,7 @@ export function HiringTab({
 
 			<div>
 				<div className="mb-4 flex items-center justify-between">
-					<h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-						Cashiers
-					</h3>
+					<h3 className="text-2xl font-bold text-gray-900 dark:text-white">Cashiers</h3>
 					{cashiersDailyWage > 0 && (
 						<div className="text-sm text-gray-600 dark:text-gray-400">
 							Daily Wages: ${cashiersDailyWage.toLocaleString()}
@@ -81,7 +75,7 @@ export function HiringTab({
 								{hired && (
 									<Badge
 										color="success"
-										className="absolute right-4 top-4"
+										className="absolute top-4 right-4"
 										icon={HiCheckCircle}
 									>
 										Hired
@@ -123,8 +117,8 @@ export function HiringTab({
 									<div>
 										{!meetsLevel && (
 											<p className="mb-2 text-sm text-red-600 dark:text-red-400">
-												Store level {cashier.storeLevel} required
-												(currently {currentStoreLevel})
+												Store level {cashier.storeLevel} required (currently{" "}
+												{currentStoreLevel})
 											</p>
 										)}
 										<Button
@@ -152,9 +146,7 @@ export function HiringTab({
 
 			<div>
 				<div className="mb-4 flex items-center justify-between">
-					<h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-						Restockers
-					</h3>
+					<h3 className="text-2xl font-bold text-gray-900 dark:text-white">Restockers</h3>
 					{restockersDailyWage > 0 && (
 						<div className="text-sm text-gray-600 dark:text-gray-400">
 							Daily Wages: ${restockersDailyWage.toLocaleString()}
@@ -171,7 +163,7 @@ export function HiringTab({
 								{hired && (
 									<Badge
 										color="success"
-										className="absolute right-4 top-4"
+										className="absolute top-4 right-4"
 										icon={HiCheckCircle}
 									>
 										Hired
@@ -261,7 +253,7 @@ export function HiringTab({
 								{hired && (
 									<Badge
 										color="success"
-										className="absolute right-4 top-4"
+										className="absolute top-4 right-4"
 										icon={HiCheckCircle}
 									>
 										Hired
@@ -351,7 +343,7 @@ export function HiringTab({
 								{hired && (
 									<Badge
 										color="success"
-										className="absolute right-4 top-4"
+										className="absolute top-4 right-4"
 										icon={HiCheckCircle}
 									>
 										Hired
@@ -418,9 +410,7 @@ export function HiringTab({
 
 			<div>
 				<div className="mb-4 flex items-center justify-between">
-					<h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-						Janitors
-					</h3>
+					<h3 className="text-2xl font-bold text-gray-900 dark:text-white">Janitors</h3>
 					{janitorsDailyWage > 0 && (
 						<div className="text-sm text-gray-600 dark:text-gray-400">
 							Daily Wages: ${janitorsDailyWage.toLocaleString()}
@@ -437,7 +427,7 @@ export function HiringTab({
 								{hired && (
 									<Badge
 										color="success"
-										className="absolute right-4 top-4"
+										className="absolute top-4 right-4"
 										icon={HiCheckCircle}
 									>
 										Hired
