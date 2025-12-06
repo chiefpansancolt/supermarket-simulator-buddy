@@ -2,13 +2,7 @@ import { Badge, Button, Card } from "flowbite-react";
 import { HiCheckCircle, HiLockClosed } from "react-icons/hi";
 import { management } from "@/data/supermarket-simulator/management";
 import { market } from "@/data/supermarket-simulator/market";
-import type { Playthrough } from "@/types";
-
-interface LicensesTabProps {
-	activePlaythrough: Playthrough;
-	onUnlockLicense: (licenseId: string) => void;
-	onLockLicense: (licenseId: string) => void;
-}
+import type { LicensesTabProps } from "@/types";
 
 export function LicensesTab({ activePlaythrough, onUnlockLicense, onLockLicense }: LicensesTabProps) {
 	const currentStoreLevel = activePlaythrough.storeLevel ?? 0;
@@ -22,14 +16,12 @@ export function LicensesTab({ activePlaythrough, onUnlockLicense, onLockLicense 
 		return market.products.filter((p) => p.licenseId === licenseId);
 	};
 
-	// Calculate total spent on licenses
 	const totalSpent = management.licenses
 		.filter((license) => isLicenseUnlocked(license.id))
 		.reduce((sum, license) => sum + license.price, 0);
 
 	return (
 		<div className="space-y-6">
-			{/* Total Spending Summary */}
 			<Card>
 				<div className="flex items-center justify-between">
 					<div>

@@ -1,13 +1,7 @@
 import { Badge, Button, Card } from "flowbite-react";
 import { HiCheckCircle, HiLockClosed } from "react-icons/hi";
 import { management } from "@/data/supermarket-simulator/management";
-import type { Playthrough } from "@/types";
-
-interface StorageTabProps {
-	activePlaythrough: Playthrough;
-	onUnlockStorage: (sectionNum: string) => void;
-	onLockStorage: (sectionNum: string) => void;
-}
+import type { StorageTabProps } from "@/types";
 
 export function StorageTab({ activePlaythrough, onUnlockStorage, onLockStorage }: StorageTabProps) {
 	const currentStoreLevel = activePlaythrough.storeLevel ?? 0;
@@ -24,14 +18,12 @@ export function StorageTab({ activePlaythrough, onUnlockStorage, onLockStorage }
 		return isStorageUnlocked(previousSection.sectionNum);
 	};
 
-	// Calculate total spent on storage
 	const totalSpent = management.storage
 		.filter((storage) => isStorageUnlocked(storage.sectionNum))
 		.reduce((sum, storage) => sum + storage.price, 0);
 
 	return (
 		<div className="space-y-6">
-			{/* Total Spending Summary */}
 			<Card>
 				<div className="flex items-center justify-between">
 					<div>

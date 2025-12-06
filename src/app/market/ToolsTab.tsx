@@ -1,12 +1,7 @@
 import { Badge, Button, Card } from "flowbite-react";
 import { HiCheckCircle, HiLockClosed } from "react-icons/hi";
 import { market } from "@/data/supermarket-simulator/market";
-import type { Playthrough } from "@/types";
-
-interface ToolsTabProps {
-	activePlaythrough: Playthrough;
-	onUnlockTool: (toolName: string) => void;
-}
+import type { ToolsTabProps } from "@/types";
 
 export function ToolsTab({ activePlaythrough, onUnlockTool }: ToolsTabProps) {
 	const unlockedTools = activePlaythrough.unlockedTools || [];
@@ -15,14 +10,12 @@ export function ToolsTab({ activePlaythrough, onUnlockTool }: ToolsTabProps) {
 		return unlockedTools.includes(toolName);
 	};
 
-	// Calculate total spent on tools
 	const totalSpent = market.tools
 		.filter((tool) => isToolUnlocked(tool.name))
 		.reduce((sum, tool) => sum + tool.unitPrice, 0);
 
 	return (
 		<div className="space-y-6">
-			{/* Total Spending Summary */}
 			<Card>
 				<div className="flex items-center justify-between">
 					<div>
@@ -61,7 +54,7 @@ export function ToolsTab({ activePlaythrough, onUnlockTool }: ToolsTabProps) {
 									<img
 										src={tool.imageUrl}
 										alt={tool.name}
-										className="h-24 w-24 flex-shrink-0 object-contain"
+										className="h-24 w-24 shrink-0 object-contain"
 									/>
 								)}
 								<div className="flex flex-1 flex-col">

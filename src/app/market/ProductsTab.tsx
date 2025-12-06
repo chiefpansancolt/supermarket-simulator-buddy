@@ -6,11 +6,7 @@ import {
 	DISPLAY_TYPES,
 	CATEGORIES,
 } from "@/data/constants/supermarket-simulator";
-import type { Playthrough } from "@/types";
-
-interface ProductsTabProps {
-	activePlaythrough: Playthrough;
-}
+import type { ProductsTabProps } from "@/types";
 
 export function ProductsTab({ activePlaythrough }: ProductsTabProps) {
 	const unlockedLicenses = activePlaythrough.unlockedLicenses || [];
@@ -18,7 +14,6 @@ export function ProductsTab({ activePlaythrough }: ProductsTabProps) {
 	const [displayFilter, setDisplayFilter] = useState("all");
 	const [categoryFilter, setCategoryFilter] = useState("all");
 
-	// Capitalize first letter of each word and remove underscores
 	const capitalize = (str: string) =>
 		str
 			.replace(/_/g, " ")
@@ -26,7 +21,6 @@ export function ProductsTab({ activePlaythrough }: ProductsTabProps) {
 			.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
 			.join(" ");
 
-	// Filter products
 	const filterProducts = (products: typeof market.products) => {
 		return products.filter((product) => {
 			const matchesSearch =
@@ -114,7 +108,6 @@ export function ProductsTab({ activePlaythrough }: ProductsTabProps) {
 
 	return (
 		<div className="space-y-6">
-			{/* Filters */}
 			<Card>
 				<div className="grid grid-cols-1 gap-4 md:grid-cols-3">
 					<div>
@@ -167,7 +160,6 @@ export function ProductsTab({ activePlaythrough }: ProductsTabProps) {
 				</div>
 			</Card>
 
-			{/* Unlocked Products Section */}
 			<div>
 				<h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
 					Unlocked Products ({unlockedProducts.length})
@@ -183,7 +175,6 @@ export function ProductsTab({ activePlaythrough }: ProductsTabProps) {
 				)}
 			</div>
 
-			{/* Locked Products Section */}
 			<div>
 				<h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
 					Locked Products ({lockedProducts.length})

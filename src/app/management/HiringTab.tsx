@@ -1,13 +1,7 @@
 import { Badge, Button, Card } from "flowbite-react";
 import { HiCheckCircle, HiLockClosed } from "react-icons/hi";
 import { management } from "@/data/supermarket-simulator/management";
-import type { Playthrough } from "@/types";
-
-interface HiringTabProps {
-	activePlaythrough: Playthrough;
-	onHireEmployee: (employeeId: string) => void;
-	onFireEmployee: (employeeId: string) => void;
-}
+import type { HiringTabProps } from "@/types";
 
 export function HiringTab({
 	activePlaythrough,
@@ -21,7 +15,6 @@ export function HiringTab({
 		return hiredEmployees.includes(employeeId);
 	};
 
-	// Calculate section daily wages
 	const cashiersDailyWage = management.hiring.cashiers
 		.filter((c) => isEmployeeHired(c.id))
 		.reduce((sum, c) => sum + c.dailyWage, 0);
@@ -51,7 +44,6 @@ export function HiringTab({
 
 	return (
 		<div className="space-y-8">
-			{/* Total Daily Wage Summary */}
 			<Card>
 				<div className="flex items-center justify-between">
 					<div>
@@ -68,7 +60,6 @@ export function HiringTab({
 				</div>
 			</Card>
 
-			{/* Cashiers */}
 			<div>
 				<div className="mb-4 flex items-center justify-between">
 					<h3 className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -159,7 +150,6 @@ export function HiringTab({
 				</div>
 			</div>
 
-			{/* Restockers */}
 			<div>
 				<div className="mb-4 flex items-center justify-between">
 					<h3 className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -250,7 +240,6 @@ export function HiringTab({
 				</div>
 			</div>
 
-			{/* Customer Helpers */}
 			<div>
 				<div className="mb-4 flex items-center justify-between">
 					<h3 className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -341,7 +330,6 @@ export function HiringTab({
 				</div>
 			</div>
 
-			{/* Security Guards */}
 			<div>
 				<div className="mb-4 flex items-center justify-between">
 					<h3 className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -428,7 +416,6 @@ export function HiringTab({
 				</div>
 			</div>
 
-			{/* Janitors */}
 			<div>
 				<div className="mb-4 flex items-center justify-between">
 					<h3 className="text-2xl font-bold text-gray-900 dark:text-white">

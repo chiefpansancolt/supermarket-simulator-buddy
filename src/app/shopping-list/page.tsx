@@ -10,7 +10,6 @@ import {
 	ModalBody,
 	ModalFooter,
 	ModalHeader,
-	Select,
 	Table,
 	TableBody,
 	TableCell,
@@ -24,7 +23,7 @@ import { useState } from "react";
 import { HiPlus, HiRefresh, HiSearch, HiTrash } from "react-icons/hi";
 import { usePlaythrough } from "@/lib/contexts/PlaythroughContext";
 import { market } from "@/data/supermarket-simulator/market";
-import type { ShoppingListItem } from "@/types";
+import type { ShoppingListItem, PendingItem } from "@/types";
 import {
 	LIQUOR_STORE_LOCATION,
 	JANITORIAL_SUPPLY_LOCATION,
@@ -33,15 +32,6 @@ import {
 	GREEN_MARKET_LOCATION,
 } from "@/data/constants/supermarket-simulator";
 
-interface PendingItem {
-	id: string;
-	productName: string;
-	company?: string;
-	boxes: number;
-	store: string;
-}
-
-// Helper function to format location names
 const formatLocationName = (location: string): string => {
 	switch (location) {
 		case LIQUOR_STORE_LOCATION:
@@ -61,7 +51,6 @@ const formatLocationName = (location: string): string => {
 	}
 };
 
-// Helper function to get sort order for locations
 const getLocationSortOrder = (location: string): number => {
 	switch (location) {
 		case DELI_AND_GROCERY_LOCATION:
@@ -75,9 +64,9 @@ const getLocationSortOrder = (location: string): number => {
 		case JANITORIAL_SUPPLY_LOCATION:
 			return 5;
 		case "":
-			return 999; // "No Shop Available" at the end
+			return 999;
 		default:
-			return 500; // Unknown locations in the middle
+			return 500;
 	}
 };
 
@@ -91,35 +80,28 @@ export default function ShoppingListPage() {
 	const shoppingList = activePlaythrough.shoppingList || [];
 	const unlockedLicenses = activePlaythrough.unlockedLicenses || [];
 
-	// Filter products to only show unlocked ones
 	const availableProducts = market.products.filter((product) =>
 		unlockedLicenses.includes(product.licenseId)
 	);
 
-	// Modal state
 	const [showModal, setShowModal] = useState(false);
 	const [pendingItems, setPendingItems] = useState<PendingItem[]>([]);
 	const [searchTerm, setSearchTerm] = useState("");
 
-	// Add item to pending list or increment if already exists
 	const handleAddProduct = (product: typeof availableProducts[0]) => {
 		const productKey = `${product.name}|${product.company || ""}`;
 
-		// Check if product already in pending items
 		const existingItem = pendingItems.find(
 			(item) => `${item.productName}|${item.company || ""}` === productKey
 		);
 
 		if (existingItem) {
-			// Increment boxes for existing item
 			setPendingItems(
 				pendingItems.map((item) =>
 					item.id === existingItem.id ? { ...item, boxes: item.boxes + 1 } : item
 				)
 			);
 		} else {
-			// Add new item with 1 box
-			// Use the actual bigBoxStore value, even if it's empty string
 			const store = product.bigBoxStore || "";
 
 			const newPendingItem: PendingItem = {
@@ -134,12 +116,10 @@ export default function ShoppingListPage() {
 		}
 	};
 
-	// Remove item from pending list
 	const handleRemoveFromPending = (itemId: string) => {
 		setPendingItems(pendingItems.filter((item) => item.id !== itemId));
 	};
 
-	// Increment boxes for pending item
 	const handleIncrementBoxes = (itemId: string) => {
 		setPendingItems(
 			pendingItems.map((item) =>
@@ -148,7 +128,6 @@ export default function ShoppingListPage() {
 		);
 	};
 
-	// Decrement boxes for pending item
 	const handleDecrementBoxes = (itemId: string) => {
 		setPendingItems(
 			pendingItems.map((item) =>
@@ -159,7 +138,6 @@ export default function ShoppingListPage() {
 		);
 	};
 
-	// Submit all pending items to shopping list
 	const handleSubmitItems = () => {
 		const newItems: ShoppingListItem[] = pendingItems.map((item) => ({
 			...item,
@@ -170,19 +148,16 @@ export default function ShoppingListPage() {
 			shoppingList: [...shoppingList, ...newItems],
 		});
 
-		// Close modal and reset
 		setPendingItems([]);
 		setShowModal(false);
 	};
 
-	// Cancel and close modal
 	const handleCancelModal = () => {
 		setPendingItems([]);
 		setSearchTerm("");
 		setShowModal(false);
 	};
 
-	// Filter products by search term
 	const filteredProducts = availableProducts.filter((product) => {
 		const searchLower = searchTerm.toLowerCase();
 		return (
@@ -191,7 +166,6 @@ export default function ShoppingListPage() {
 		);
 	});
 
-	// Toggle purchased status
 	const handleTogglePurchased = (itemId: string) => {
 		const updatedList = shoppingList.map((item) =>
 			item.id === itemId ? { ...item, purchased: !item.purchased } : item
@@ -202,7 +176,6 @@ export default function ShoppingListPage() {
 		});
 	};
 
-	// Remove item from list
 	const handleRemoveItem = (itemId: string) => {
 		const updatedList = shoppingList.filter((item) => item.id !== itemId);
 
@@ -211,14 +184,12 @@ export default function ShoppingListPage() {
 		});
 	};
 
-	// Reset shopping list
 	const handleReset = () => {
 		updatePlaythrough(activePlaythrough.id, {
 			shoppingList: [],
 		});
 	};
 
-	// Group items by store
 	const itemsByStore = shoppingList.reduce(
 		(acc, item) => {
 			if (!acc[item.store]) {
@@ -252,12 +223,10 @@ export default function ShoppingListPage() {
 					</Button>
 				</div>
 
-				{/* Add Products Modal */}
 				<Modal show={showModal} onClose={handleCancelModal} size="6xl">
 					<ModalHeader>Add Products to Shopping List</ModalHeader>
 					<ModalBody>
 						<div className="space-y-4">
-							{/* Search Section */}
 							<div>
 								<div className="mb-2 block">
 									<Label htmlFor="search">Search Products</Label>
@@ -272,7 +241,6 @@ export default function ShoppingListPage() {
 								/>
 							</div>
 
-							{/* Product Cards Grid */}
 							<div>
 								<h3 className="mb-3 text-lg font-semibold text-gray-900 dark:text-white">
 									Click a Product to Add
@@ -331,7 +299,6 @@ export default function ShoppingListPage() {
 								</div>
 							</div>
 
-							{/* Pending Items List */}
 							{pendingItems.length > 0 && (
 								<div>
 									<h3 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
@@ -437,7 +404,6 @@ export default function ShoppingListPage() {
 					</ModalFooter>
 				</Modal>
 
-				{/* Summary Stats */}
 				{shoppingList.length > 0 && (
 					<Card className="mb-6">
 						<div className="flex items-center justify-between">
@@ -462,7 +428,6 @@ export default function ShoppingListPage() {
 					</Card>
 				)}
 
-				{/* Shopping List by Store */}
 				{shoppingList.length === 0 ? (
 					<Card>
 						<p className="text-center text-gray-600 dark:text-gray-400">

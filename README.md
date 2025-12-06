@@ -240,10 +240,6 @@ This application is not affiliated with, endorsed by, or connected to Supermarke
 
 This is a fan-made tool created to enhance the gaming experience.
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## Links
 
 - [Official Supermarket Simulator Game](https://supermarketsimulator.com/)

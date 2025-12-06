@@ -35,7 +35,6 @@ export default function Dashboard() {
 		setIsDeleteModalOpen(false);
 	};
 
-	// Helper function to calculate loan details
 	const calculateLoanDetails = (loan: Loan, termLength: number) => {
 		const totalInterest = loan.originalAmount * loan.dailyInterest * termLength;
 		const totalPayment = loan.originalAmount + totalInterest;
@@ -48,7 +47,6 @@ export default function Dashboard() {
 		};
 	};
 
-	// Calculate financial stats
 	const activeLoans = activePlaythrough.activeLoans || [];
 	const totalLoanDebt = activeLoans.reduce((sum, activeLoan) => {
 		const loan = bank.loans[activeLoan.loanIndex];
@@ -61,7 +59,6 @@ export default function Dashboard() {
 		return sum + dailyPayment;
 	}, 0);
 
-	// Calculate management stats
 	const unlockedLicenses = activePlaythrough.unlockedLicenses || [];
 	const licensesSpent = management.licenses
 		.filter((license) => unlockedLicenses.includes(license.id))
@@ -78,7 +75,6 @@ export default function Dashboard() {
 		.reduce((sum, storage) => sum + storage.price, 0);
 
 	const hiredEmployees = activePlaythrough.hiredEmployees || [];
-	// Calculate total daily wages from all employee types
 	const cashiersDailyWage = management.hiring.cashiers
 		.filter((c) => hiredEmployees.includes(c.id))
 		.reduce((sum, c) => sum + c.dailyWage, 0);
@@ -101,7 +97,6 @@ export default function Dashboard() {
 		guardsDailyWage +
 		janitorsDailyWage;
 
-	// Calculate market stats
 	const unlockedTools = activePlaythrough.unlockedTools || [];
 	const toolsSpent = market.tools
 		.filter((tool) => unlockedTools.includes(tool.name))
@@ -116,7 +111,6 @@ export default function Dashboard() {
 	const totalMarketSpent = toolsSpent + vehiclesSpent;
 	const totalInvestment = totalManagementSpent + totalMarketSpent;
 
-	// Calculate total number of employees available
 	const totalEmployees =
 		management.hiring.cashiers.length +
 		management.hiring.restockers.length +
@@ -162,7 +156,6 @@ export default function Dashboard() {
 					</div>
 				</div>
 
-				{/* Store Level */}
 				<Card className="mb-6">
 					<div className="flex items-center justify-between">
 						<div>
@@ -183,7 +176,6 @@ export default function Dashboard() {
 				</Card>
 
 				<div className="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
-					{/* Financial Overview */}
 					<Card>
 						<div className="mb-4 flex items-center gap-2">
 							<HiCurrencyDollar className="h-6 w-6 text-gray-900 dark:text-white" />
@@ -215,7 +207,6 @@ export default function Dashboard() {
 							</Button>
 						</div>
 					</Card>
-					{/* Total Investment Summary */}
 					<Card className="flex justify-start">
 						<div>
 							<h2 className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -233,9 +224,7 @@ export default function Dashboard() {
 					</Card>
 				</div>
 
-				{/* Management & Market Stats */}
 				<div className="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
-					{/* Management Stats */}
 					<Card>
 						<div className="mb-4 flex items-center gap-2">
 							<HiOfficeBuilding className="h-6 w-6 text-gray-900 dark:text-white" />
@@ -315,7 +304,6 @@ export default function Dashboard() {
 						</div>
 					</Card>
 
-					{/* Market Stats */}
 					<Card>
 						<div className="mb-4 flex items-center gap-2">
 							<HiShoppingCart className="h-6 w-6 text-gray-900 dark:text-white" />

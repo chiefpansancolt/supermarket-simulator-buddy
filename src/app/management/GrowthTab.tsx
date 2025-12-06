@@ -1,13 +1,7 @@
 import { Badge, Button, Card } from "flowbite-react";
 import { HiCheckCircle, HiLockClosed } from "react-icons/hi";
 import { management } from "@/data/supermarket-simulator/management";
-import type { Playthrough } from "@/types";
-
-interface GrowthTabProps {
-	activePlaythrough: Playthrough;
-	onUnlockGrowth: (sectionNum: string) => void;
-	onLockGrowth: (sectionNum: string) => void;
-}
+import type { GrowthTabProps } from "@/types";
 
 export function GrowthTab({ activePlaythrough, onUnlockGrowth, onLockGrowth }: GrowthTabProps) {
 	const currentStoreLevel = activePlaythrough.storeLevel ?? 0;
@@ -24,14 +18,12 @@ export function GrowthTab({ activePlaythrough, onUnlockGrowth, onLockGrowth }: G
 		return isGrowthUnlocked(previousSection.sectionNum);
 	};
 
-	// Calculate total spent on growth
 	const totalSpent = management.growth
 		.filter((growth) => isGrowthUnlocked(growth.sectionNum))
 		.reduce((sum, growth) => sum + growth.price, 0);
 
 	return (
 		<div className="space-y-6">
-			{/* Total Spending Summary */}
 			<Card>
 				<div className="flex items-center justify-between">
 					<div>

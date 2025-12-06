@@ -15,7 +15,7 @@ export function FurnitureTab() {
 								<img
 									src={furniture.imageUrl}
 									alt={furniture.name}
-									className="h-24 w-24 flex-shrink-0 object-contain"
+									className="h-24 w-24 shrink-0 object-contain"
 								/>
 							)}
 							<div className="flex flex-col">

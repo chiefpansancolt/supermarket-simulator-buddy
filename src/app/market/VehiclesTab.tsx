@@ -1,12 +1,7 @@
 import { Badge, Button, Card } from "flowbite-react";
 import { HiCheckCircle, HiLockClosed } from "react-icons/hi";
 import { market } from "@/data/supermarket-simulator/market";
-import type { Playthrough } from "@/types";
-
-interface VehiclesTabProps {
-	activePlaythrough: Playthrough;
-	onUnlockVehicle: (vehicleName: string) => void;
-}
+import type { VehiclesTabProps } from "@/types";
 
 export function VehiclesTab({
 	activePlaythrough,
@@ -19,14 +14,12 @@ export function VehiclesTab({
 		return unlockedVehicles.includes(vehicleName);
 	};
 
-	// Calculate total spent on vehicles
 	const totalSpent = market.vehicles
 		.filter((vehicle) => isVehicleUnlocked(vehicle.name))
 		.reduce((sum, vehicle) => sum + vehicle.unitPrice, 0);
 
 	return (
 		<div className="space-y-6">
-			{/* Total Spending Summary */}
 			<Card>
 				<div className="flex items-center justify-between">
 					<div>
@@ -66,7 +59,7 @@ export function VehiclesTab({
 									<img
 										src={vehicle.imageUrl}
 										alt={vehicle.name}
-										className="h-24 w-24 flex-shrink-0 object-contain"
+										className="h-24 w-24 shrink-0 object-contain"
 									/>
 								)}
 								<div className="flex flex-1 flex-col">

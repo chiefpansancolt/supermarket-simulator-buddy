@@ -17,11 +17,9 @@ export default function BankPage() {
 
 	const activeLoans = activePlaythrough.activeLoans || [];
 
-	// State to track slider values for each loan
 	const [termLengths, setTermLengths] = useState<Record<number, number>>(
 		bank.loans.reduce(
 			(acc, loan, index) => {
-				// Check if this loan is already active
 				const activeLoan = activeLoans.find((al) => al.loanIndex === index);
 				acc[index] = activeLoan?.termLength || loan.minTermLength;
 				return acc;
