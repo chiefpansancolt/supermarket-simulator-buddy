@@ -6,9 +6,10 @@ import type { Playthrough } from "@/types";
 interface GrowthTabProps {
 	activePlaythrough: Playthrough;
 	onUnlockGrowth: (sectionNum: string) => void;
+	onLockGrowth: (sectionNum: string) => void;
 }
 
-export function GrowthTab({ activePlaythrough, onUnlockGrowth }: GrowthTabProps) {
+export function GrowthTab({ activePlaythrough, onUnlockGrowth, onLockGrowth }: GrowthTabProps) {
 	const currentStoreLevel = activePlaythrough.storeLevel ?? 0;
 	const unlockedGrowth = activePlaythrough.unlockedGrowth || [];
 
@@ -67,15 +68,25 @@ export function GrowthTab({ activePlaythrough, onUnlockGrowth }: GrowthTabProps)
 								</div>
 							</div>
 
-							<div className="ml-4">
+							<div className="ml-4 flex gap-2">
 								{unlocked ? (
-									<Badge
-										color="success"
-										icon={HiCheckCircle}
-										className="text-sm"
-									>
-										Unlocked
-									</Badge>
+									<>
+										<Badge
+											color="success"
+											icon={HiCheckCircle}
+											className="text-sm"
+										>
+											Unlocked
+										</Badge>
+										<Button
+											color="red"
+											outline
+											size="sm"
+											onClick={() => onLockGrowth(growth.sectionNum)}
+										>
+											Undo
+										</Button>
+									</>
 								) : (
 									<Button
 										color="blue"

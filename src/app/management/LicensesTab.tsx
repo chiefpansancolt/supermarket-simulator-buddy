@@ -96,9 +96,19 @@ export function LicensesTab({ activePlaythrough, onUnlockLicense, onLockLicense 
 						</div>
 
 						{unlocked ? (
-							<Button color="gray" disabled className="w-full">
-								Already Unlocked
-							</Button>
+							<div className="flex gap-2">
+								<Button color="gray" disabled className="flex-1">
+									Already Unlocked
+								</Button>
+								<Button
+									color="red"
+									outline
+									onClick={() => onLockLicense(license.id)}
+									className="flex-1"
+								>
+									Undo
+								</Button>
+							</div>
 						) : (
 							<div>
 								{!meetsLevel && (

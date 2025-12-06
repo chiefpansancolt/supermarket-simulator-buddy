@@ -6,9 +6,10 @@ import type { Playthrough } from "@/types";
 interface StorageTabProps {
 	activePlaythrough: Playthrough;
 	onUnlockStorage: (sectionNum: string) => void;
+	onLockStorage: (sectionNum: string) => void;
 }
 
-export function StorageTab({ activePlaythrough, onUnlockStorage }: StorageTabProps) {
+export function StorageTab({ activePlaythrough, onUnlockStorage, onLockStorage }: StorageTabProps) {
 	const currentStoreLevel = activePlaythrough.storeLevel ?? 0;
 	const unlockedStorage = activePlaythrough.unlockedStorage || [];
 
@@ -67,15 +68,25 @@ export function StorageTab({ activePlaythrough, onUnlockStorage }: StorageTabPro
 								</div>
 							</div>
 
-							<div className="ml-4">
+							<div className="ml-4 flex gap-2">
 								{unlocked ? (
-									<Badge
-										color="success"
-										icon={HiCheckCircle}
-										className="text-sm"
-									>
-										Unlocked
-									</Badge>
+									<>
+										<Badge
+											color="success"
+											icon={HiCheckCircle}
+											className="text-sm"
+										>
+											Unlocked
+										</Badge>
+										<Button
+											color="red"
+											outline
+											size="sm"
+											onClick={() => onLockStorage(storage.sectionNum)}
+										>
+											Undo
+										</Button>
+									</>
 								) : (
 									<Button
 										color="blue"

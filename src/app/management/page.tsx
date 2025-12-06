@@ -27,15 +27,33 @@ export default function ManagementPage() {
 		});
 	};
 
+	const handleLockLicense = (licenseId: string) => {
+		updatePlaythrough(activePlaythrough.id, {
+			unlockedLicenses: unlockedLicenses.filter((id) => id !== licenseId),
+		});
+	};
+
 	const handleUnlockGrowth = (sectionNum: string) => {
 		updatePlaythrough(activePlaythrough.id, {
 			unlockedGrowth: [...unlockedGrowth, sectionNum],
 		});
 	};
 
+	const handleLockGrowth = (sectionNum: string) => {
+		updatePlaythrough(activePlaythrough.id, {
+			unlockedGrowth: unlockedGrowth.filter((id) => id !== sectionNum),
+		});
+	};
+
 	const handleUnlockStorage = (sectionNum: string) => {
 		updatePlaythrough(activePlaythrough.id, {
 			unlockedStorage: [...unlockedStorage, sectionNum],
+		});
+	};
+
+	const handleLockStorage = (sectionNum: string) => {
+		updatePlaythrough(activePlaythrough.id, {
+			unlockedStorage: unlockedStorage.filter((id) => id !== sectionNum),
 		});
 	};
 
@@ -69,6 +87,7 @@ export default function ManagementPage() {
 						<LicensesTab
 							activePlaythrough={activePlaythrough}
 							onUnlockLicense={handleUnlockLicense}
+							onLockLicense={handleLockLicense}
 						/>
 					</TabItem>
 
@@ -76,6 +95,7 @@ export default function ManagementPage() {
 						<GrowthTab
 							activePlaythrough={activePlaythrough}
 							onUnlockGrowth={handleUnlockGrowth}
+							onLockGrowth={handleLockGrowth}
 						/>
 					</TabItem>
 
@@ -83,6 +103,7 @@ export default function ManagementPage() {
 						<StorageTab
 							activePlaythrough={activePlaythrough}
 							onUnlockStorage={handleUnlockStorage}
+							onLockStorage={handleLockStorage}
 						/>
 					</TabItem>
 
