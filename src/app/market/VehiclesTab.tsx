@@ -61,69 +61,71 @@ export function VehiclesTab({
 								</Badge>
 							)}
 
-							<div className="flex flex-col items-center">
+							<div className="flex gap-4">
 								{vehicle.imageUrl && (
 									<img
 										src={vehicle.imageUrl}
 										alt={vehicle.name}
-										className="mb-3 h-24 w-24 object-contain"
+										className="h-24 w-24 flex-shrink-0 object-contain"
 									/>
 								)}
-								<h3 className="text-center text-lg font-bold text-gray-900 dark:text-white">
-									{vehicle.name}
-								</h3>
-								<p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
-									{vehicle.description}
-								</p>
-								<div className="mt-3 space-y-2 text-sm">
-									<div className="flex items-center justify-between gap-4">
-										<span className="text-gray-600 dark:text-gray-400">
-											Price:
-										</span>
-										<span className="font-semibold text-blue-600 dark:text-blue-400">
-											${vehicle.unitPrice.toLocaleString()}
-										</span>
-									</div>
-									<div className="flex items-center justify-between gap-4">
-										<span className="text-gray-600 dark:text-gray-400">
-											Store Level:
-										</span>
-										<span className="font-semibold text-gray-900 dark:text-white">
-											{vehicle.storeLevel}
-										</span>
-									</div>
-								</div>
-
-								<div className="mt-4 w-full">
-									{unlocked ? (
-										<Button color="gray" disabled className="w-full">
-											Already Unlocked
-										</Button>
-									) : (
-										<div>
-											{!meetsLevel && (
-												<p className="mb-2 text-center text-sm text-red-600 dark:text-red-400">
-													Store level {vehicle.storeLevel} required (currently{" "}
-													{currentStoreLevel})
-												</p>
-											)}
-											<Button
-												color="blue"
-												onClick={() => onUnlockVehicle(vehicle.name)}
-												disabled={!meetsLevel}
-												className="w-full"
-											>
-												{meetsLevel ? (
-													"Unlock"
-												) : (
-													<>
-														<HiLockClosed className="mr-2 h-4 w-4" />
-														Locked
-													</>
-												)}
-											</Button>
+								<div className="flex flex-1 flex-col">
+									<h3 className="text-lg font-bold text-gray-900 dark:text-white">
+										{vehicle.name}
+									</h3>
+									<p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+										{vehicle.description}
+									</p>
+									<div className="mt-3 space-y-2 text-sm">
+										<div className="flex items-center justify-between gap-4">
+											<span className="text-gray-600 dark:text-gray-400">
+												Price:
+											</span>
+											<span className="font-semibold text-blue-600 dark:text-blue-400">
+												${vehicle.unitPrice.toLocaleString()}
+											</span>
 										</div>
-									)}
+										<div className="flex items-center justify-between gap-4">
+											<span className="text-gray-600 dark:text-gray-400">
+												Store Level:
+											</span>
+											<span className="font-semibold text-gray-900 dark:text-white">
+												{vehicle.storeLevel}
+											</span>
+										</div>
+									</div>
+
+									<div className="mt-4">
+										{unlocked ? (
+											<Button color="gray" disabled className="w-full">
+												Already Unlocked
+											</Button>
+										) : (
+											<div>
+												{!meetsLevel && (
+													<p className="mb-2 text-sm text-red-600 dark:text-red-400">
+														Store level {vehicle.storeLevel} required (currently{" "}
+														{currentStoreLevel})
+													</p>
+												)}
+												<Button
+													color="blue"
+													onClick={() => onUnlockVehicle(vehicle.name)}
+													disabled={!meetsLevel}
+													className="w-full"
+												>
+													{meetsLevel ? (
+														"Unlock"
+													) : (
+														<>
+															<HiLockClosed className="mr-2 h-4 w-4" />
+															Locked
+														</>
+													)}
+												</Button>
+											</div>
+										)}
+									</div>
 								</div>
 							</div>
 						</Card>

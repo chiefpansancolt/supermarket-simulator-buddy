@@ -63,7 +63,7 @@ export function GrowthTab({ activePlaythrough, onUnlockGrowth, onLockGrowth }: G
 								</h3>
 								<div className="mt-2 flex gap-4 text-sm text-gray-600 dark:text-gray-400">
 									<span>Store Level: {growth.storeLevel}</span>
-									<span>Price: ${growth.price.toLocaleString()}</span>
+									<span>Price: {growth.price === 0 ? "Free" : `$${growth.price.toLocaleString()}`}</span>
 									<span>Size: 4x4</span>
 								</div>
 							</div>

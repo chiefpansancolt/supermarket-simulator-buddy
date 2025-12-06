@@ -56,51 +56,53 @@ export function ToolsTab({ activePlaythrough, onUnlockTool }: ToolsTabProps) {
 								</Badge>
 							)}
 
-							<div className="flex flex-col items-center">
+							<div className="flex gap-4">
 								{tool.imageUrl && (
 									<img
 										src={tool.imageUrl}
 										alt={tool.name}
-										className="mb-3 h-24 w-24 object-contain"
+										className="h-24 w-24 flex-shrink-0 object-contain"
 									/>
 								)}
-								<h3 className="text-center text-lg font-bold text-gray-900 dark:text-white">
-									{tool.name}
-								</h3>
-								<p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
-									{tool.description}
-								</p>
-								{tool.requirement && (
-									<p className="mt-2 text-center text-xs text-orange-600 dark:text-orange-400">
-										{tool.requirement}
+								<div className="flex flex-1 flex-col">
+									<h3 className="text-lg font-bold text-gray-900 dark:text-white">
+										{tool.name}
+									</h3>
+									<p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+										{tool.description}
 									</p>
-								)}
-								<div className="mt-3 text-xl font-semibold text-blue-600 dark:text-blue-400">
-									{tool.unitPrice === 0 ? "Free" : `$${tool.unitPrice.toLocaleString()}`}
-								</div>
-
-								<div className="mt-4 w-full">
-									{unlocked ? (
-										<Button color="gray" disabled className="w-full">
-											Already Unlocked
-										</Button>
-									) : (
-										<Button
-											color="blue"
-											onClick={() => onUnlockTool(tool.name)}
-											disabled={!canUnlock}
-											className="w-full"
-										>
-											{canUnlock ? (
-												"Unlock"
-											) : (
-												<>
-													<HiLockClosed className="mr-2 h-4 w-4" />
-													Locked
-												</>
-											)}
-										</Button>
+									{tool.requirement && (
+										<p className="mt-2 text-xs text-orange-600 dark:text-orange-400">
+											{tool.requirement}
+										</p>
 									)}
+									<div className="mt-2 text-xl font-semibold text-blue-600 dark:text-blue-400">
+										{tool.unitPrice === 0 ? "Free" : `$${tool.unitPrice.toLocaleString()}`}
+									</div>
+
+									<div className="mt-4">
+										{unlocked ? (
+											<Button color="gray" disabled className="w-full">
+												Already Unlocked
+											</Button>
+										) : (
+											<Button
+												color="blue"
+												onClick={() => onUnlockTool(tool.name)}
+												disabled={!canUnlock}
+												className="w-full"
+											>
+												{canUnlock ? (
+													"Unlock"
+												) : (
+													<>
+														<HiLockClosed className="mr-2 h-4 w-4" />
+														Locked
+													</>
+												)}
+											</Button>
+										)}
+									</div>
 								</div>
 							</div>
 						</Card>

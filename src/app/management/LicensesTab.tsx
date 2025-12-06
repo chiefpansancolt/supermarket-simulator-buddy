@@ -72,7 +72,7 @@ export function LicensesTab({ activePlaythrough, onUnlockLicense, onLockLicense 
 						<div className="mb-4 space-y-2 text-sm text-gray-700 dark:text-gray-300">
 							<div className="flex justify-between">
 								<span className="font-medium">Price:</span>
-								<span>${license.price.toLocaleString()}</span>
+								<span>{license.price === 0 ? "Free" : `$${license.price.toLocaleString()}`}</span>
 							</div>
 							<div className="flex justify-between">
 								<span className="font-medium">Store Level:</span>

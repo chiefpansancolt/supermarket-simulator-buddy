@@ -63,7 +63,7 @@ export function StorageTab({ activePlaythrough, onUnlockStorage, onLockStorage }
 								</h3>
 								<div className="mt-2 flex gap-4 text-sm text-gray-600 dark:text-gray-400">
 									<span>Store Level: {storage.storeLevel}</span>
-									<span>Price: ${storage.price.toLocaleString()}</span>
+									<span>Price: {storage.price === 0 ? "Free" : `$${storage.price.toLocaleString()}`}</span>
 									<span>Size: 4x4</span>
 								</div>
 							</div>
