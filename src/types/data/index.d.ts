@@ -1,6 +1,7 @@
 import {
   CATEGORIES,
   DISPLAY_TYPES,
+  LOCATIONS,
 } from "@/data/constants/supermarket-simulator";
 
 export interface Market {
@@ -111,7 +112,7 @@ export interface Product {
   boxesPerStorage: number;
   displayType: DISPLAY_TYPES;
   category?: CATEGORIES;
-  bigBoxStore?: string;
+  bigBoxStore?: LOCATIONS | "";
 }
 
 export interface Furniture {

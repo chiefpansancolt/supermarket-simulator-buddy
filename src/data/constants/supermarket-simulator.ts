@@ -16,6 +16,12 @@ export const HARDWARE_CATEGORY = "hardware";
 export const KITCHEN_CATEGORY = "kitchen";
 export const PET_CATEGORY = "pet";
 
+export const LIQUOR_STORE_LOCATION = "liquor_store";
+export const JANITORIAL_SUPPLY_LOCATION = "janitorial_supply";
+export const DELI_AND_GROCERY_LOCATION = "deli_and_grocery";
+export const MEAT_AND_DAIRY_LOCATION = "meat_and_dairy";
+export const GREEN_MARKET_LOCATION = "green_market";
+
 export const DISPLAY_TYPES = [
   SHELF_TYPE,
   FRIDGE_TYPE,
@@ -36,4 +42,12 @@ export const CATEGORIES = [
   HARDWARE_CATEGORY,
   KITCHEN_CATEGORY,
   PET_CATEGORY,
+] as const;
+
+export const LOCATIONS = [
+  LIQUOR_STORE_LOCATION,
+  JANITORIAL_SUPPLY_LOCATION,
+  DELI_AND_GROCERY_LOCATION,
+  MEAT_AND_DAIRY_LOCATION,
+  GREEN_MARKET_LOCATION,
 ] as const;

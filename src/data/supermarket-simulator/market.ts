@@ -10,6 +10,11 @@ import {
   PRODUCE_CATEGORY,
   SHELF_TYPE,
   STALL_TYPE,
+  LIQUOR_STORE_LOCATION,
+  JANITORIAL_SUPPLY_LOCATION,
+  DELI_AND_GROCERY_LOCATION,
+  MEAT_AND_DAIRY_LOCATION,
+  GREEN_MARKET_LOCATION,
 } from "@/data/constants/supermarket-simulator";
 
 const products: Product[] = [
@@ -21,7 +26,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Red Apple.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Apple Juice",
@@ -32,7 +37,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Apple Juice_Bio Juice.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Artichoke",
@@ -42,7 +47,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Artichoke.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Avacado",
@@ -52,7 +57,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Avacado.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Banana",
@@ -62,7 +67,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Banana.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Beer Blonde Ale",
@@ -73,7 +78,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Beer Blonde Ale_Fess.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Beer Brown Ale",
@@ -84,7 +89,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Beer Brown Ale_BK.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Beer Blonde Ale 6-Pack",
@@ -95,7 +100,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Beer Blonde Ale - 6 Pack_Fess.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Beer Brown Ale 6-Pack",
@@ -106,7 +111,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Beer Brown Ale - 6 Pack_BK.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Beer Blonde Ale Keg",
@@ -117,7 +122,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Beer Blonde Ale - Keg Fess.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Beer Blonde Ale Keg",
@@ -128,7 +133,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Beer Brown Ale- Keg Degl.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Beer Lager",
@@ -139,7 +144,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Beer Lager Teochew.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Beer Lager 6-Pack",
@@ -150,7 +155,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Beer Lager - 6 Pack_Teochew.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Beer Lager Keg",
@@ -161,7 +166,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Beer Lager - Keg Teochew.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Bleach",
@@ -172,7 +177,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Bleach Jaja Vevel.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Bleach",
@@ -183,7 +188,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Bleach WC Boeff.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Book",
@@ -326,7 +331,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Bottled Water Aotte.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Bottled Water",
@@ -337,7 +342,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Bottled Water_Montcuq.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Bottled Water",
@@ -348,7 +353,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Bottled Water_Fort-lacs.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Butter",
@@ -359,7 +364,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Butter Paysans.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Cake",
@@ -370,7 +375,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Cake_Bon Papa.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Cake",
@@ -381,7 +386,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Cake_Pépites.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Cake",
@@ -392,7 +397,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Cake_Gerbe.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Cake",
@@ -403,7 +408,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Cake_Marbré.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Cake",
@@ -414,7 +419,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Cake Prairie.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Cake",
@@ -425,7 +430,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Cake_St Michmich.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Candy",
@@ -436,7 +441,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Candy Bonbek.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Carrot",
@@ -446,7 +451,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Carrot.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Cat Food",
@@ -479,7 +484,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Cereal Chokipik.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Cereal",
@@ -490,7 +495,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Cereal_Crispy Chibi.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Cereal",
@@ -501,7 +506,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Cereal_Honey Bees.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Cheese",
@@ -512,7 +517,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Cheese_Comté.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Cheese",
@@ -523,7 +528,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Cheese_Mimolette.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Cheese",
@@ -545,7 +550,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Cheese Mozarella_Don Bernardo.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Cheese Parmesan",
@@ -556,7 +561,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Cheese Parmesan_Don Bernardo.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Cheese Parmesan",
@@ -578,7 +583,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Chicken_Mwef.png",
     displayType: FREEZER_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Chicken Leg",
@@ -589,7 +594,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Chicken Leg_Bovora.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Chips",
@@ -600,7 +605,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Chips Covidos.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Chips",
@@ -611,7 +616,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Chips_Chipos.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Chips",
@@ -622,7 +627,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Chips_Vin's.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Chocolate Bar",
@@ -633,7 +638,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Chocolate Bar Chocotte.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Chocolate Bar",
@@ -644,7 +649,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Chocolate Bar_Denorme.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Chocolate Powder",
@@ -655,7 +660,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Chocolate Powder_Boudain.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Chocolate Spread",
@@ -666,7 +671,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Chocolate Spread_Patatartine.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Cleaner",
@@ -677,7 +682,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Cleaner Touprop.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Cleaner",
@@ -688,7 +693,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Cleaner_Kilemol.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Cleaner",
@@ -699,7 +704,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Cleaner_Yamo.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Cleaner",
@@ -710,7 +715,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Cleaner_Wesh.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Cleaner",
@@ -721,7 +726,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Cleaner_Le Triangle.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Clementine",
@@ -731,7 +736,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Clementine.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Coffee Dark Roast",
@@ -742,7 +747,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Coffee Narvalo.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Coffee Light Roast",
@@ -753,7 +758,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Coffee Light_Narvalo.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Coffee Medium Roast",
@@ -764,7 +769,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Coffee Medium_Narvalo.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Crab Stick",
@@ -775,7 +780,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Crab Stick_Sans.png",
     displayType: FREEZER_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Crème Fraîche Epaisse",
@@ -786,7 +791,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Crème Fraîche Epaisse_Etron.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Dish Soap Durian",
@@ -797,7 +802,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Dish Soap Durian_Sapu.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Dish Soap Lemon",
@@ -808,7 +813,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Dish Soap Lemon_Mouss.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Dishwasher Tablet",
@@ -819,7 +824,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Dishwasher Tablet_Cleandish.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Dishwasher Tablet",
@@ -830,7 +835,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Dishwasher Tablet_Boum.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Dishwasher Tablet",
@@ -841,7 +846,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Dishwasher Tablet_Cemagik.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Dog Food",
@@ -863,7 +868,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Eggs-12pack_Bio.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Eggs 4-Pack",
@@ -874,7 +879,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Eggs-4pack_Bio.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Eggs 8-Pack",
@@ -885,7 +890,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Eggs Bio.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Fabric Softener",
@@ -896,7 +901,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Fabric Softener_Souplesse.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Fabric Softener",
@@ -907,7 +912,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Fabric Softener_Toudou.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Flour",
@@ -918,7 +923,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Flour_Kraftung.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Flour",
@@ -929,7 +934,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Flour_Farine.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Flour",
@@ -940,7 +945,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Flour_Sublett's.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "French Fries",
@@ -951,7 +956,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/French Fries_Vandame's.png",
     displayType: FREEZER_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Galette Ham&Cheese",
@@ -962,7 +967,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Galette_Ham&Cheese_Prypiat.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Garlic",
@@ -972,7 +977,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Garlic.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Grapefruit",
@@ -982,7 +987,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Grapefruit.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Green Beans",
@@ -993,7 +998,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Green Beans_MrBean.png",
     displayType: FREEZER_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Ground Beef",
@@ -1004,7 +1009,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Ground Beef_Bovora.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Ham",
@@ -1015,7 +1020,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Ham_B&K.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Ham Pastry",
@@ -1026,7 +1031,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Ham Pastry_Ronpoint.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Hand Soap",
@@ -1037,7 +1042,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Hand Soap Savion.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Honey",
@@ -1059,7 +1064,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Hot Sauce_Hothot.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Houmus",
@@ -1070,7 +1075,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Houmus_Bibi.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Ice cream",
@@ -1081,7 +1086,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Ice cream_Bonbek.png",
     displayType: FREEZER_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Ice cream Chocolate",
@@ -1092,7 +1097,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Ice cream Chocolate_Maxi Cone.png",
     displayType: FREEZER_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Ice cream Vanilla",
@@ -1103,7 +1108,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Ice cream Vanilla_Maxi Cone.png",
     displayType: FREEZER_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Ketchup",
@@ -1114,7 +1119,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Ketchup_Kekette.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Kiwi",
@@ -1124,7 +1129,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Kiwi.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Lasagne",
@@ -1135,7 +1140,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Lasagne_Ronpoint.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Lemon",
@@ -1145,7 +1150,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Lemon.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Mango",
@@ -1155,7 +1160,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Mango.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Mashed Potatoes",
@@ -1166,7 +1171,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Mashed Potatoes_Puray.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Mayonnaise",
@@ -1177,7 +1182,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Mayonnaise_Yoyo.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Melon",
@@ -1187,7 +1192,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Melon.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Milk",
@@ -1198,7 +1203,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Milk Bourlait.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Milk 6-Pack",
@@ -1209,7 +1214,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Milk-6Pack_Labol.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Moussaka",
@@ -1220,7 +1225,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Moussaka_Ronpoint.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Mushroom",
@@ -1230,7 +1235,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Mushroom.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Oil",
@@ -1241,7 +1246,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Oil Lespieds.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Olive Oil",
@@ -1252,7 +1257,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Olive Oil_Tupiges.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Onion",
@@ -1262,7 +1267,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Onion.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Orange Juice",
@@ -1273,7 +1278,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Orange Juice Bio Juice.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Papaya",
@@ -1294,7 +1299,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/PaperTowel_Compact.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Pasta",
@@ -1305,7 +1310,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Pasta_Panzati.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Pasta Elbows",
@@ -1316,7 +1321,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Pasta Elbows_Lustupacru.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Pasta Penne",
@@ -1327,7 +1332,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Pasta Penne_Parillo.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Pasta Spaghetti",
@@ -1338,7 +1343,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Pasta Spaghetti_Elo.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Peanut Butter",
@@ -1349,7 +1354,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Peanut Butter_PB's.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Pear",
@@ -1359,7 +1364,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Perry.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Pepper",
@@ -1380,7 +1385,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Pineapple.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Pizza",
@@ -1391,7 +1396,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Pizza_Bigtony.png",
     displayType: FREEZER_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Pizza Cheddar",
@@ -1402,7 +1407,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Pizza Cheddar_ChezzyPizz.png",
     displayType: FREEZER_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Pizza Mixed",
@@ -1413,7 +1418,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Pizza Mixed_DeNiro.png",
     displayType: FREEZER_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Potato",
@@ -1423,7 +1428,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Potato.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Potato Bag",
@@ -1434,7 +1439,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Potato Bag_Miam.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Potato Pops",
@@ -1445,7 +1450,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Potato Pops_Spok.png",
     displayType: FREEZER_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Proscuito",
@@ -1456,7 +1461,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Proscuito_Sapore.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Pumpkin",
@@ -1477,7 +1482,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Rice_Elo.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Rice Basmati",
@@ -1488,7 +1493,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Rice Basmati_Lustupacru.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Rice Long Grain",
@@ -1499,7 +1504,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Rice_Uncle Tony's.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Salmon",
@@ -1510,7 +1515,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Salmon_NordicHarbor.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Salt",
@@ -1521,7 +1526,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Salt_Laba.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Sandwich Bread",
@@ -1532,7 +1537,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Sandwich Bread_Ron's.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Scallop Gratin",
@@ -1543,7 +1548,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/SCallop Gratin_Prypiat.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Shampoo",
@@ -1554,7 +1559,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Shampoo Kaya.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Sliced Bread",
@@ -1565,7 +1570,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Sliced Bread Ron's.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Soda",
@@ -1576,7 +1581,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Soda Cola.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Soda",
@@ -1587,7 +1592,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Soda Zap.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Soda",
@@ -1598,7 +1603,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Soda_Turko.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Soda",
@@ -1609,7 +1614,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Soda_Jus Tsistu.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Soda",
@@ -1620,7 +1625,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Soda_Kouje.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Soda",
@@ -1631,7 +1636,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Soda_Pulp.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Soda",
@@ -1642,7 +1647,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Soda_Ropico.png",
     displayType: FRIDGE_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Soda Can 6-Pack",
@@ -1653,7 +1658,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Soda Can - 6 Pack_Cola.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Soda Can 6-Pack",
@@ -1664,7 +1669,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Soda Can - 6 Pack_Zap.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Squash",
@@ -1674,7 +1679,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Squash.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Steak",
@@ -1685,7 +1690,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Steak_Bovora.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Sugar",
@@ -1696,7 +1701,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Sugar_Daron.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Sugar Brown",
@@ -1707,7 +1712,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Sugar Brown_Susu.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Sugar Cane",
@@ -1718,7 +1723,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Sugar Cane_Daron.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Sugar Light Brown",
@@ -1729,7 +1734,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Sugar Light Brown_Daron.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Sugar Powdered",
@@ -1740,7 +1745,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Sugar Powdered_Susu.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Sugar Powdered",
@@ -1751,7 +1756,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Sugar Powdered_Pablo.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Sugar Powdered",
@@ -1762,7 +1767,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Sugar Powdered_Boully.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Sushi Large",
@@ -1773,7 +1778,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Sushi Large_Ulego.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Sushi Small",
@@ -1784,7 +1789,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Sushi Small_Ulego.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Tea Black",
@@ -1795,7 +1800,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Tea Black_Tea Palace.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Tea Green",
@@ -1806,7 +1811,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Tea Green_Tea Palace.png",
     displayType: SHELF_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Toilet Paper",
@@ -1817,7 +1822,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Toiletpaper Poudou.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Toilet Paper",
@@ -1828,7 +1833,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Toiletpaper_Bidet.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Toilet Paper",
@@ -1839,7 +1844,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/cleaning/Toiletpaper_Petus.png",
     displayType: SHELF_TYPE,
     category: CLEANING_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: JANITORIAL_SUPPLY_LOCATION,
   },
   {
     name: "Tomato",
@@ -1871,7 +1876,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Tuna_Stark.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Veal Chop",
@@ -1882,7 +1887,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Veal Chop_Bovora.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: MEAT_AND_DAIRY_LOCATION,
   },
   {
     name: "Veggie Mix",
@@ -1893,7 +1898,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Veggie Mix_Ege.png",
     displayType: FREEZER_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Vodka",
@@ -1904,7 +1909,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Vodka_EAY.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Vodka",
@@ -1915,7 +1920,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Vodka_MAGNAT.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Watermelon",
@@ -1925,7 +1930,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/produce/Watermelon.png",
     displayType: STALL_TYPE,
     category: PRODUCE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: GREEN_MARKET_LOCATION,
   },
   {
     name: "Whiskey",
@@ -1936,7 +1941,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Whiskey_Grand Marnier.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Whiskey",
@@ -1947,7 +1952,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Whiskey Jack Sublett.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Whisky",
@@ -1958,7 +1963,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Whisky_Japanese.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Wine",
@@ -1969,7 +1974,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Wine Chebon.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Wine",
@@ -1980,7 +1985,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Wine_Heng.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Wine",
@@ -1991,7 +1996,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/drinks/Wine_Pouilleux.png",
     displayType: SHELF_TYPE,
     category: DRINK_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: LIQUOR_STORE_LOCATION,
   },
   {
     name: "Yoghurt",
@@ -2002,7 +2007,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Yoghurt_Frügen.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Yoghurt",
@@ -2013,7 +2018,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Yoghurt_Madone.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Yoghurt",
@@ -2024,7 +2029,7 @@ const products: Product[] = [
     imageUrl: "/assets/products/edible/Yoghurt_Yowp.png",
     displayType: FRIDGE_TYPE,
     category: EDIBLE_CATEGORY,
-    bigBoxStore: "",
+    bigBoxStore: DELI_AND_GROCERY_LOCATION,
   },
   {
     name: "Zucchini",
