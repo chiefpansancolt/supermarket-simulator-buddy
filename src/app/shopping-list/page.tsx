@@ -25,6 +25,13 @@ import { HiPlus, HiRefresh, HiSearch, HiTrash } from "react-icons/hi";
 import { usePlaythrough } from "@/lib/contexts/PlaythroughContext";
 import { market } from "@/data/supermarket-simulator/market";
 import type { ShoppingListItem } from "@/types";
+import {
+	LIQUOR_STORE_LOCATION,
+	JANITORIAL_SUPPLY_LOCATION,
+	DELI_AND_GROCERY_LOCATION,
+	MEAT_AND_DAIRY_LOCATION,
+	GREEN_MARKET_LOCATION,
+} from "@/data/constants/supermarket-simulator";
 
 interface PendingItem {
 	id: string;
@@ -33,6 +40,46 @@ interface PendingItem {
 	boxes: number;
 	store: string;
 }
+
+// Helper function to format location names
+const formatLocationName = (location: string): string => {
+	switch (location) {
+		case LIQUOR_STORE_LOCATION:
+			return "Liquor Store";
+		case JANITORIAL_SUPPLY_LOCATION:
+			return "Janitorial Supply";
+		case DELI_AND_GROCERY_LOCATION:
+			return "Deli and Grocery";
+		case MEAT_AND_DAIRY_LOCATION:
+			return "Meat and Dairy";
+		case GREEN_MARKET_LOCATION:
+			return "Green Market";
+		case "":
+			return "No Shop Available";
+		default:
+			return location;
+	}
+};
+
+// Helper function to get sort order for locations
+const getLocationSortOrder = (location: string): number => {
+	switch (location) {
+		case DELI_AND_GROCERY_LOCATION:
+			return 1;
+		case MEAT_AND_DAIRY_LOCATION:
+			return 2;
+		case GREEN_MARKET_LOCATION:
+			return 3;
+		case LIQUOR_STORE_LOCATION:
+			return 4;
+		case JANITORIAL_SUPPLY_LOCATION:
+			return 5;
+		case "":
+			return 999; // "No Shop Available" at the end
+		default:
+			return 500; // Unknown locations in the middle
+	}
+};
 
 export default function ShoppingListPage() {
 	const { activePlaythrough, updatePlaythrough } = usePlaythrough();
@@ -72,8 +119,8 @@ export default function ShoppingListPage() {
 			);
 		} else {
 			// Add new item with 1 box
-			const storeNumber = (shoppingList.length % 3) + 1;
-			const store = product.bigBoxStore || `Store ${storeNumber}`;
+			// Use the actual bigBoxStore value, even if it's empty string
+			const store = product.bigBoxStore || "";
 
 			const newPendingItem: PendingItem = {
 				id: crypto.randomUUID(),
@@ -189,7 +236,7 @@ export default function ShoppingListPage() {
 
 	return (
 		<main className="min-h-screen bg-gray-50 p-8 dark:bg-gray-900">
-			<div className="mx-auto max-w-7xl">
+			<div className="mx-auto w-full">
 				<div className="mb-8 flex items-start justify-between">
 					<div>
 						<h1 className="text-4xl font-bold text-gray-900 dark:text-white">
@@ -343,7 +390,9 @@ export default function ShoppingListPage() {
 																</Button>
 															</div>
 														</TableCell>
-														<TableCell>{item.store}</TableCell>
+														<TableCell>
+															{formatLocationName(item.store)}
+														</TableCell>
 														<TableCell>
 															<Button
 																color="light"
@@ -421,37 +470,38 @@ export default function ShoppingListPage() {
 						</p>
 					</Card>
 				) : (
-					<div className="space-y-6">
+					<div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
 						{Object.keys(itemsByStore)
-							.sort()
+							.sort((a, b) => getLocationSortOrder(a) - getLocationSortOrder(b))
 							.map((store) => (
 								<Card key={store}>
 									<div className="mb-4 flex items-center justify-between">
 										<h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-											{store}
+											{formatLocationName(store)}
 										</h3>
 										<Badge color="gray">
 											{itemsByStore[store].length} items
 										</Badge>
 									</div>
-									<div className="space-y-3">
+									<div className="grid grid-cols-1 gap-3 md:grid-cols-2">
 										{itemsByStore[store].map((item) => (
 											<div
 												key={item.id}
-												className={`flex items-center justify-between rounded-lg border p-4 ${
+												className={`flex flex-col rounded-lg border p-4 ${
 													item.purchased
 														? "border-green-300 bg-green-50 dark:border-green-700 dark:bg-green-900/20"
 														: "border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800"
 												}`}
 											>
-												<div className="flex items-center gap-4">
+												<div className="flex items-start gap-3">
 													<Checkbox
 														checked={item.purchased}
 														onChange={() =>
 															handleTogglePurchased(item.id)
 														}
+														className="mt-1"
 													/>
-													<div>
+													<div className="flex-1">
 														<p
 															className={`font-medium ${
 																item.purchased
@@ -466,14 +516,14 @@ export default function ShoppingListPage() {
 															{item.boxes} box{item.boxes > 1 ? "es" : ""}
 														</p>
 													</div>
+													<Button
+														color="light"
+														size="xs"
+														onClick={() => handleRemoveItem(item.id)}
+													>
+														<HiTrash className="h-4 w-4" />
+													</Button>
 												</div>
-												<Button
-													color="light"
-													size="sm"
-													onClick={() => handleRemoveItem(item.id)}
-												>
-													<HiTrash className="h-4 w-4" />
-												</Button>
 											</div>
 										))}
 									</div>
