@@ -29,6 +29,13 @@ const loans: Loan[] = [
     maxTermLength: 25,
     storeLevel: 30,
   },
+  {
+    dailyInterest: 0.06,
+    originalAmount: 50000,
+    minTermLength: 5,
+    maxTermLength: 25,
+    storeLevel: 50,
+  },
 ];
 
 export const bank: Bank = {
