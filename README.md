@@ -234,6 +234,14 @@ This project uses:
 
 Run `npm run format` before committing.
 
+## 📋 Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a full history of releases and changes.
+
+## 🌐 Live Demo
+
+[Try Supermarket Simulator Buddy Online](https://supermarket-simulator-buddy.vercel.app)
+
 ## Disclaimer
 
 This application is not affiliated with, endorsed by, or connected to Supermarket Simulator or its developers. All trademarks and game content are the property of their respective owners.
@@ -255,4 +263,4 @@ This is a fan-made tool created to enhance the gaming experience.
 
 ---
 
-Made with ❤️ for the Supermarket Simulator community
+Made with ❤️ for the Supermarket Simulator community 
