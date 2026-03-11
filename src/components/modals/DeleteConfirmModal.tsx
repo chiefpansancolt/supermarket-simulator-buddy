@@ -24,7 +24,8 @@ export function DeleteConfirmModal({
 					<p className="mb-4 text-gray-500 dark:text-gray-300">
 						{itemName ? (
 							<>
-								Are you sure you want to delete "<strong>{itemName}</strong>"?
+								Are you sure you want to delete &quot;<strong>{itemName}</strong>
+								&quot;?
 							</>
 						) : (
 							message
@@ -35,7 +36,7 @@ export function DeleteConfirmModal({
 							No, cancel
 						</Button>
 						<Button color="red" onClick={handleConfirm}>
-							Yes, I'm sure
+							Yes, I&apos;m sure
 						</Button>
 					</div>
 				</div>

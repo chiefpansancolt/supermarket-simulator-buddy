@@ -246,7 +246,7 @@ export default function ShoppingListPage() {
 								<div className="max-h-96 overflow-y-auto rounded-lg border border-gray-200 p-4 dark:border-gray-700">
 									{filteredProducts.length === 0 ? (
 										<p className="text-center text-gray-600 dark:text-gray-400">
-											No products found matching "{searchTerm}"
+											No products found matching &quot;{searchTerm}&quot;
 										</p>
 									) : (
 										<div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">

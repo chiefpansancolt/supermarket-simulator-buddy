@@ -117,7 +117,7 @@ export default function Home() {
 							<p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
 								Supermarket Simulator Buddy provides comprehensive tracking for
 								every aspect of your supermarket business. From licenses to storage,
-								we've got you covered.
+								we&apos;ve got you covered.
 							</p>
 						</div>
 					</div>

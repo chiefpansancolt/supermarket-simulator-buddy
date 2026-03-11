@@ -1,29 +1,22 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useRef, useState } from "react";
 import type { AppData, Playthrough, PlaythroughContextType } from "@/types";
 import { storageService } from "@/service/storage";
 
 const PlaythroughContext = createContext<PlaythroughContextType | undefined>(undefined);
 
 export function PlaythroughProvider({ children }: { children: React.ReactNode }) {
-	const [appData, setAppData] = useState<AppData>({
-		playthroughs: [],
-		activePlaythroughId: null,
-	});
-	const [isLoaded, setIsLoaded] = useState(false);
+	const [appData, setAppData] = useState<AppData>(() => storageService.load());
+	const isLoadedRef = useRef(false);
 
 	useEffect(() => {
-		const data = storageService.load();
-		setAppData(data);
-		setIsLoaded(true);
-	}, []);
-
-	useEffect(() => {
-		if (isLoaded) {
+		if (isLoadedRef.current) {
 			storageService.save(appData);
+		} else {
+			isLoadedRef.current = true;
 		}
-	}, [appData, isLoaded]);
+	}, [appData]);
 
 	const activePlaythrough =
 		appData.playthroughs.find((p) => p.id === appData.activePlaythroughId) || null;

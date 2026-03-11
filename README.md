@@ -263,4 +263,4 @@ This is a fan-made tool created to enhance the gaming experience.
 
 ---
 
-Made with ❤️ for the Supermarket Simulator community 
+Made with ❤️ for the Supermarket Simulator community
