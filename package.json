@@ -1,7 +1,19 @@
 {
     "name": "supermarket-simulator-buddy",
-    "version": "0.1.0",
+    "version": "0.2.0",
+    "description": "A progress tracking tool for the game Supermarket Simulator",
+    "keywords": [
+        "supermarket-simulator",
+        "game-tracker",
+        "nextjs",
+        "react"
+    ],
+    "author": "Christopher Pezza",
+    "license": "MIT",
     "private": true,
+    "engines": {
+        "node": ">=24"
+    },
     "scripts": {
         "dev": "next dev",
         "build": "next build",
