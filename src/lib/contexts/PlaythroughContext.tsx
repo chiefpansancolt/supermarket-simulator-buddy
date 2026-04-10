@@ -6,15 +6,22 @@ import { storageService } from "@/service/storage";
 
 const PlaythroughContext = createContext<PlaythroughContextType | undefined>(undefined);
 
+const defaultData: AppData = { playthroughs: [], activePlaythroughId: null };
+
 export function PlaythroughProvider({ children }: { children: React.ReactNode }) {
-	const [appData, setAppData] = useState<AppData>(() => storageService.load());
+	const [appData, setAppData] = useState<AppData>(defaultData);
 	const isLoadedRef = useRef(false);
+
+	useEffect(() => {
+		const loaded = storageService.load();
+		isLoadedRef.current = true;
+		// eslint-disable-next-line react-hooks/set-state-in-effect
+		setAppData(loaded);
+	}, []);
 
 	useEffect(() => {
 		if (isLoadedRef.current) {
 			storageService.save(appData);
-		} else {
-			isLoadedRef.current = true;
 		}
 	}, [appData]);
 
