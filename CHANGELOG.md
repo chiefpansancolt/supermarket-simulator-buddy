@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [UNRELEASED]
 
+## [1.0.0] - 2026-04-10
+
+### Add
+
+- Add SEO
+- Add Footer to all pages
+- Add Discord Link
+
+### Fix
+
+- Fix broken link for Vintage Book.
+
 ## [0.2.0] - 2026-3-11
 
 ### Chore
