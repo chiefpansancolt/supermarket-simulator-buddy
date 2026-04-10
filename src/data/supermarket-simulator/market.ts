@@ -306,7 +306,7 @@ const products: Product[] = [
     itemsPerBox: 8,
     boxesPerStorage: 6,
     licenseId: "license_27",
-    imageUrl: "/assets/products/books/Book Vintage Story.png",
+    imageUrl: "/assets/products/books/Book Vintage Storybook.png",
     displayType: SHELF_TYPE,
     category: BOOK_CATEGORY,
     bigBoxStore: "",
