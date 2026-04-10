@@ -16,9 +16,59 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"],
 });
 
+const SITE_URL = "https://supermarket-simulator.gamerdex.app";
+
+const SITE_DESCRIPTION =
+	"The ultimate companion app for Supermarket Simulator. Track progress across multiple playthroughs, manage licenses, monitor budgets, and build your supermarket empire.";
+
 export const metadata: Metadata = {
-	title: "Supermarket Simulator Buddy",
-	description: "Track your progress across multiple playthroughs of Supermarket Simulator",
+	metadataBase: new URL(SITE_URL),
+	title: {
+		default: "Supermarket Simulator Buddy",
+		template: "%s | Supermarket Simulator Buddy",
+	},
+	description: SITE_DESCRIPTION,
+	keywords: [
+		"Supermarket Simulator",
+		"progress tracker",
+		"game companion",
+		"playthroughs",
+		"license manager",
+		"budget tracker",
+		"store management",
+		"supermarket game",
+	],
+	openGraph: {
+		type: "website",
+		locale: "en_US",
+		url: "/",
+		title: "Supermarket Simulator Buddy",
+		description: SITE_DESCRIPTION,
+		siteName: "Supermarket Simulator Buddy",
+		images: [
+			{
+				url: "/screenshot.png",
+				width: 2432,
+				height: 1442,
+				alt: "Supermarket Simulator Buddy — app screenshot",
+			},
+		],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Supermarket Simulator Buddy",
+		description: SITE_DESCRIPTION,
+		images: ["/screenshot.png"],
+	},
+	icons: {
+		icon: [
+			{ url: "/favicon.ico", sizes: "any" },
+			{ url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+			{ url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+		],
+		apple: "/apple-touch-icon.png",
+	},
+	manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

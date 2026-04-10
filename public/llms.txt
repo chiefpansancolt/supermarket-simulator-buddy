@@ -1,0 +1,22 @@
+# Supermarket Simulator Buddy
+
+> A free, browser-based progress tracking companion app for the game Supermarket Simulator. Manage multiple playthroughs, track licenses, monitor budgets, and build your supermarket empire. No account required — all data is stored locally in your browser.
+
+## Pages
+
+- [Home](https://supermarket-simulator-buddy.vercel.app/): Landing page with feature overview, FAQ, and getting started guide
+- [Dashboard](https://supermarket-simulator-buddy.vercel.app/dashboard): View and manage your active playthrough — name, description, store level, and progress summary
+- [Management](https://supermarket-simulator-buddy.vercel.app/management): Track product licenses, store growth sections, storage capacity, hiring, and store customizations
+- [Market](https://supermarket-simulator-buddy.vercel.app/market): Browse and track products, tools, vehicles, furniture, and paint available for your store
+- [Bank](https://supermarket-simulator-buddy.vercel.app/bank): Monitor financial progress and budget tracking across all spending categories
+- [Shopping List](https://supermarket-simulator-buddy.vercel.app/shopping-list): Create and manage custom shopping lists for store runs
+- [Settings](https://supermarket-simulator-buddy.vercel.app/settings): Export, import, or clear all playthrough data as JSON
+
+## Optional
+
+- [Sitemap](https://supermarket-simulator-buddy.vercel.app/sitemap.xml)
+- [Robots](https://supermarket-simulator-buddy.vercel.app/robots.txt)
+
+## About
+
+Supermarket Simulator Buddy is an unofficial fan-made tool and is not affiliated with, endorsed by, or connected to Supermarket Simulator or its developers. All trademarks and game content are the property of their respective owners. All user data is stored in browser localStorage — no backend, no accounts, no tracking.
