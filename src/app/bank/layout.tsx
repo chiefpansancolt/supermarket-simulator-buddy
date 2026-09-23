@@ -4,6 +4,9 @@ export const metadata: Metadata = {
 	title: "Bank",
 	description:
 		"Monitor your Supermarket Simulator financial progress and track budget spending across all store categories.",
+	alternates: {
+		canonical: "/bank",
+	},
 	openGraph: {
 		title: "Bank | Supermarket Simulator Buddy",
 		description:

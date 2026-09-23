@@ -39,6 +39,9 @@ export const metadata: Metadata = {
 		"store management",
 		"supermarket game",
 	],
+	alternates: {
+		canonical: "/",
+	},
 	openGraph: {
 		type: "website",
 		locale: "en_US",

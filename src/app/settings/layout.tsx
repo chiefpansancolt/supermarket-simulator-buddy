@@ -4,6 +4,9 @@ export const metadata: Metadata = {
 	title: "Settings",
 	description:
 		"Export, import, or clear your Supermarket Simulator Buddy playthrough data. Backup your progress as JSON anytime.",
+	alternates: {
+		canonical: "/settings",
+	},
 	openGraph: {
 		title: "Settings | Supermarket Simulator Buddy",
 		description:

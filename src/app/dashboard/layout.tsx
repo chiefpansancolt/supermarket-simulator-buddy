@@ -4,6 +4,9 @@ export const metadata: Metadata = {
 	title: "Dashboard",
 	description:
 		"View and manage your active Supermarket Simulator playthrough. Track store level, progress, and key stats at a glance.",
+	alternates: {
+		canonical: "/dashboard",
+	},
 	openGraph: {
 		title: "Dashboard | Supermarket Simulator Buddy",
 		description:
